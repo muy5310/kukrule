@@ -1,19 +1,117 @@
-<!DOCTYPE html>
+<!DOCTYPE=html>
 <html lang="kr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <style>
 
-    </style>
 </head>
 
 <body>
-    <div>Login</div>
+    <div id="login-container">
+        <p>국룰(國rule)</p>
+        <div>
+            <input class="login-input" type="text" placeholder="이메일주소 입력" id="userid"><br>
+            <input class="login-input" type="password" placeholder="비밀번호 입력" id="userpw"><br>
+            <button id="login-btn" type="submit">로그인</button>
+        </div>
+        <div>
+            <span>
+				<p>자동로그인</p>
+				<input id="login-check" type="checkbox"/>
+			</span>
+            <span>
+				<a class="login-achtext" href="">아이디 찾기</a>
+				<a class="login-achtext" href="">비밀번호 찾기</a>
+			</span>
+        </div>
+        <h3>SNS로그인</h3>
+        <div>
+            <input type="image" class="login-snsbtn" src="../image/naver.png" />
+            <input type="image" class="login-snsbtn" src="../image/facebook.png" />
+            <input type="image" class="login-snsbtn" src="../image/kakao.png" />
+            <input type="image" class="login-snsbtn" src="../image/google.png" />
+        </div>
+        <div>
+            <a class="login-achtext" href="">회원가입</a>
+            <a class="login-achtext" href="">고객센터</a>
+        </div>
+
+    </div>
     <script>
     </script>
+    <style>
+            #login-container {
+            text-align: center;
+            width: 100%;
+            background-color: #E7F0FF;
+        }
+        
+        #login-container>p {
+            padding: 10%;
+            font-size: 40px;
+        }
+        
+        #login-container>div>.login-input {
+            background: #FFFFFF;
+            border: 1px solid #DBD8D8;
+            border-radius: 5px;
+            width: 90%;
+            height: 40px;
+            padding-left: 2%;
+            margin: 1%;
+        }
+        
+        #login-container>div>#login-btn {
+            background: #4791FF;
+            color: #FFFFFF;
+            font-size: 100%;
+            border: 1px solid #4791FF;
+            border-radius: 5px;
+            width: 90%;
+            height: 40px;
+            margin: 1%;
+        }
+        
+        #login-container>div>span>p {
+            display: inline-block;
+            float: left;
+            margin: 0 0 0 4%;
+        }
+        
+        #login-container>div>span>#login-check {
+            float: left;
+        }
+        
+        #login-container>div>span>.login-achtext {
+            float: right;
+            font-size: 80%;
+            text-decoration: none;
+            color: #464646;
+            margin: 0 4% 0 0;
+        }
+        
+        #login-container>h3 {
+            font-size: 90%;
+            color: #464646;
+            margin-top: 90px;
+        }
+        
+        #login-container>div>.login-snsbtn {
+            display: inline;
+            border-radius: 50%;
+            width: 10%;
+            margin: 25px 1%;
+        }
+        
+        #login-container>div>.login-achtext {
+            text-align: right;
+            font-size: 80%;
+            text-decoration: none;
+            color: #464646;
+            margin: 0 0 0 4%;
+    </style>
 </body>
 
 </html>
