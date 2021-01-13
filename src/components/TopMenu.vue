@@ -11,7 +11,7 @@
             <i class="fas fa-ellipsis-h"></i> 
         </span>
 		<span class="top_func">
-            <i class="fas fa-pencil-alt"></i>
+            <i class="fas fa-plus"></i>
         </span>
     </div>
 </template>
