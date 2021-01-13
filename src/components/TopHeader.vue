@@ -4,12 +4,13 @@
 			<i class="fas fa-arrow-left"></i>
 		</span>
 		<label id="top_title">{{propsdata}}</label>
+		<label id="complete_btn">{{icondata}}</label>
     </div>
 </template>
 
 <script>
 export default {
-    props:['propsdata']
+	props:['propsdata','icondata']
 }
 </script>
 
@@ -29,5 +30,13 @@ export default {
 	}
     #top_title{
         font-weight: bold;
+    }
+	#complete_btn {
+        float: right;
+		border-radius: 5px;;
+		background: linear-gradient(to right, #656b8f, #8a79c4);
+		font-weight: bold;
+		color:white;
+		padding:2px 3px;
     }
 </style>

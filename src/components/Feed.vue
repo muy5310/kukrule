@@ -11,12 +11,10 @@
 			<div class="content_body">설문본문
 				<button class="body_detail">...자세히 보기</button>
 			</div>
-			<div>
-				<button class="body_item">설문항목</button>
-			</div><br>
+			<SurveyLine></SurveyLine>
 			<div class="contents_vote">
 				<span class="vote_num">2.8</span>
-				<span>명 투표(투표자수)</span>
+				<span>명 투표</span>
 				<span class="vote_detail">
 					<span>
 						<i class="far fa-heart"></i>
@@ -27,7 +25,7 @@
 					</span>
 				</span></div><br>
 				
-			<div class="comment_box"> 
+			<div class="comment"> 
 				<span>
 					<i class="far fa-comment-dots"></i>
 				</span>
@@ -40,10 +38,12 @@
 
 <script>
 import Comment from './Comment.vue';
+import SurveyLine from './SurveyLine.vue';
 
 export default {
     components:{
-        Comment
+        Comment,
+		SurveyLine
     }
 }
 </script>
@@ -97,7 +97,9 @@ export default {
 		border:0;
 		color:gray;
 	}
-	.comment_box{
+	.comment{
+		margin-top:10px;
+		margin-bottom:0px;
 		text-align:center;
 	}
 </style>

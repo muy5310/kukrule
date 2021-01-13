@@ -1,5 +1,5 @@
 <template>
-<div id="app">
+<div class="app">
     <TopHeader v-bind:propsdata="title"></TopHeader>
     <div id="input_line">
 		<span>댓글</span>
@@ -28,7 +28,7 @@ import CommentLine from '../components/CommentLine.vue';
 export default {
     data:function(){
         return{
-            title:'댓글창'
+            title:'(설문제목)'
         }
     },
     components: {

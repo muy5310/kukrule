@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app">
     <TopMenu></TopMenu>
     <TimeLine></TimeLine>
   </div>
@@ -18,7 +18,4 @@ export default {
 </script>
 
 <style>
-#app {
-  width:100%;
-}
 </style>
