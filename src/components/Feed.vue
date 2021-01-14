@@ -3,7 +3,7 @@
 		<div class="content_head">
             <span class="head_title">설문제목</span>
 			<button class="more_btn"><i class="fas fa-ellipsis-v"></i></button>
-				<div>	
+				<div class="middle_line">	
 					<!-- <span>카테고리</span>  -->
 					<span class="head_period">설문기간</span>
 					<span class="head_name">설문작성자</span>
@@ -21,7 +21,7 @@
 						<i class="far fa-heart"></i>
 						<label class="like_num">95</label>
 					</span>					
-                    <span>
+                    <span class="share_btn">
 						<i class="fas fa-share-alt"></i>
 					</span>
 				</span></div><br>
@@ -73,6 +73,9 @@ export default {
 		margin-top:5px;
 		background:none;
 		border:none;
+	}
+	.middle_line{
+		margin-top:4px;
 	} 
 	.head_period{
 		float:left;
@@ -99,6 +102,9 @@ export default {
         margin-left:3px;
         margin-right:5px;
     }
+	.share_btn{
+		margin-right:5px;
+	}
 	.vote_detail {
 		float:right;
 	}
