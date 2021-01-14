@@ -36,24 +36,4 @@ export default {
 </script>
 
 <style>
-.add_line{
-  text-align: center;
-}
-.plus_btn {
-        float:left;
-        margin-left:10px;
-        background: white;
-        color:rgb(205, 41, 16);
-        font-size: 20px;
-}
-.plus_txt {
-        width: 81%;
-        height: 30px;
-        color: rgb(205, 41, 16);
-        background: none;
-        border: none;
-        font-size: 15px;
-        margin-left:5px;
-        padding:0;
-}
 </style>

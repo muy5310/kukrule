@@ -4,10 +4,10 @@
     <SurveyContent></SurveyContent>
     <ItemLine></ItemLine>
     <div class="add_line">
-        <span id="plus_btn">
+        <span class="plus_btn">
 			<i class="fas fa-plus-circle"></i>
 		</span>
-        <button id="plus_txt">새 답변 추가</button>
+        <button class="plus_txt">새 답변 추가</button>
     </div><br>
     <Option></Option>
 </div>
