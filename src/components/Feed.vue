@@ -1,7 +1,8 @@
 <template>
     <div class="main_contents">
 		<div class="content_head">
-            <div class="head_title">설문제목</div>
+            <span class="head_title">설문제목</span>
+			<button class="more_btn"><i class="fas fa-ellipsis-v"></i></button>
 				<div>	
 					<!-- <span>카테고리</span>  -->
 					<span class="head_period">설문기간</span>
@@ -29,7 +30,7 @@
 				<span>
 					<i class="far fa-comment-dots"></i>
 				</span>
-				<label>댓글</label>
+				<label id="comment_label">댓글</label>
 				<span class="comment_num">608</span>
 			</div>
             <Comment></Comment>
@@ -50,18 +51,24 @@ export default {
 
 <style scoped>
     .main_contents{
-		border-style:solid;
+		border:none;
+		border-top:solid 2px gray;
 		margin-top:5px;
 	}
 	.main_contents > div {
 		margin:2%
 	}
-		
 	.head_title{
 		font-size:23px;
 		font-weight: bold;
 		margin-bottom:5px;
 	}
+	.more_btn{
+		float:right;
+		margin-top:5px;
+		background:none;
+		border:none;
+	} 
 	.head_period{
 		float:left;
 		color:gray;
@@ -101,5 +108,8 @@ export default {
 		margin-top:10px;
 		margin-bottom:0px;
 		text-align:center;
+	}
+	#comment_label{
+		margin:0 4px;
 	}
 </style>

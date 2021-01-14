@@ -7,7 +7,6 @@
         <span class="comment_date">01/06 18:21</span><br>
         <div class="comment_des">Shoes on, get up in the morn' Cup of milk, let's rock and roll King Kong, kick the drum</div>
     </div>
-    
 </template>
 <script>
 export default {
@@ -31,11 +30,9 @@ export default {
         font-weight: bold;
         margin-right:4px;
     }
-        
     .comment_date {
         color: gray;
     }
-        
     .comment_des {
         height: auto;
         overflow: auto;

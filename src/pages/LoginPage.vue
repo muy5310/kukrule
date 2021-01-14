@@ -8,10 +8,7 @@
 	
         </div>
         <div id="box_bottom">
-            <span class="bottom_btn">
-				<p id="auto_login">자동로그인</p>
-				<input id="auto_check" type="checkbox"/>
-			</span>
+            <AutoLogin></AutoLogin>
             <span class="bottom_btn">
 				<a class="login_achtext" href="">비밀번호 찾기</a>
 				<a class="login_achtext" href="">아이디 찾기</a>
@@ -37,8 +34,12 @@
 </template>
 
 <script>
-export default {
+import AutoLogin from '../components/AutoLogin.vue';
 
+export default {
+    components:{
+        AutoLogin
+    }
 }
 </script>
 
@@ -74,21 +75,12 @@ export default {
         height: 40px;
         font-weight: bold;
     }
-        
-    #auto_login {
-        display: inline-block;
-        float: left;
-        margin: 0 0 0 4%;
-    }
-    #auto_check {
-        float: left;
-    }
     .login_achtext {
         float: right;
         font-size: 12px;
         text-decoration: none;
         color: #464646;
-        margin: 0 4% 0 0;
+        margin: 0 2% 0 0;
     }
     .login_sns{
 		width:100%;
@@ -134,23 +126,6 @@ export default {
     .snsbtn>img {
         width: 17px;
     }
-    /* .naver_btn{
-        background: #21C603;
-        border-color: #21C603;
-        color:white;
-    }
-    .facebook_btn {
-        background: #3A589E;
-        border-color: #3A589E;
-        color: white;
-    }
-    .kakao_btn {
-        background: #F9E000;
-        border-color: #F9E000;
-    }
-    .kakao_btn>i {
-        color: #3B1C1C
-    } */
     .google_btn{
         background: white;
         border-color: white;
