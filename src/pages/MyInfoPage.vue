@@ -7,9 +7,30 @@
 		<label class="top_title">내 정보</label>
         <span id="my_complete">
 			<i class="fas fa-check"></i>
-		</span>
-		<!-- <label class="complete_btn shadow">내 정보</label> -->
+		</span></div>
+        <div id="myinfo_box">
+            <div id="myinfo_profile">
+                <img id="profile_icon" src="../image/profile.jpg">
+                <div>Nickname</div>
+            </div>
+            <div class="mynum_box">
+                <span class="mynum">5</span>
+                <label class="mynum_label">나의 설문</label>
+            </div>
+                
+            <div class="mynum_box">
+                <span class="mynum">32</span>
+                <label class="mynum_label">나의 선택</label>
+            </div>
         </div>
+        <div class="center_set input_box">
+            <label>ID</label>
+            <input class="myinfo_input" type="text">
+            <label id="pw_text">PW</label>
+            <input class="myinfo_input" type="text">
+        </div>
+		<!-- <label class="complete_btn shadow">내 정보</label> -->
+        
         <AutoLogin></AutoLogin><br>
         <div id="mybtn_box">
             <button class="my_btn my_survey shadow" type="button">나의 설문</button>
@@ -22,6 +43,7 @@
 <script>
 import AutoLogin from '../components/AutoLogin.vue';
 import TimeLine from '../components/TimeLine.vue';
+
 export default {
     components:{
         AutoLogin,
@@ -31,10 +53,54 @@ export default {
 </script>
 
 <style scoped>
+    .input_box{
+        margin:20px 0;
+    }
+    .myinfo_input{
+        border:none;
+        border-bottom: solid 1px gray;
+        margin:0 5px;
+        width:33%;
+    }
+    #myinfo_box{
+        text-align: center;
+        justify-content: center;
+        display:flex;
+        flex-direction: row;
+    }
+    #myinfo_profile{
+        display:flex;
+        flex-direction: column;
+        width:30%;
+        margin-right: 5%;
+    }
+    #profile_icon{
+        width:100%;
+        border-radius:50%;
+        margin-bottom: 10px;
+    }
+    .mynum_box{
+        display:flex;
+        flex-direction: column;
+        margin:0 3%;
+        justify-content: center;
+        padding-bottom:35px;
+    }
+    .mynum{
+        font-size:30px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    #pw_text{
+        margin-left:5%;
+    }
 	#my_complete {
 		font-weight: bold;
 		color:white;
         float: right;
+    }
+    #mybtn_box{
+        margin:20px 0;
     }
     .my_btn{
         width: 48%;
