@@ -18,3 +18,6 @@ from './PostPage.vue';
 
 export { default as EditPage }
 from './EditPage.vue';
+
+export { default as MyInfoPage }
+from './MyInfoPage.vue';

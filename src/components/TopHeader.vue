@@ -1,10 +1,10 @@
 <template>
-    <div id="top_header">
-        <span id="top_back">
+    <div class="top_header">
+        <span class="top_back">
 			<i class="fas fa-arrow-left"></i>
 		</span>
-		<label id="top_title">{{propsdata}}</label>
-		<label id="complete_btn">{{icondata}}</label>
+		<label class="top_title">{{propsdata}}</label>
+		<label class="complete_btn shadow">{{icondata}}</label>
     </div>
 </template>
 
@@ -15,26 +15,16 @@ export default {
 </script>
 
 <style scoped>
-    #top_header{
-		text-align: center;
-        color:white;
-		padding:13px;
-		background: linear-gradient(to right, #fbcac9, #8ca6ce);
-        margin-bottom: 10px;
-	}
-	#top_back{
-		float:left;
-	}
 	#input_line{
 		margin-top:10px;
 	}
-    #top_title{
-        font-weight: bold;
-    }
-	#complete_btn {
+	.complete_btn {
         float: right;
 		border-radius: 5px;;
-		background: linear-gradient(to right, #656b8f, #8a79c4);
+		/* background: linear-gradient(to right, #656b8f, #8a79c4); */
+		/* background-image: linear-gradient(120deg, #cd9cf2 0%, #e6dffc 100%);
+		*/
+		background-image: linear-gradient(120deg, #fd5967 0%, rgb(255, 140, 140) 100%);
 		font-weight: bold;
 		color:white;
 		padding:2px 3px;

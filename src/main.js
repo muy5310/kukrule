@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
-import { IntroPage, MainPage, CommentPage, PostPage, EditPage, LoginPage, SignupPage } from './pages';
+import { IntroPage, MainPage, CommentPage, PostPage, EditPage, LoginPage, SignupPage, MyInfoPage } from './pages';
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);
@@ -45,6 +45,10 @@ const router = new VueRouter({
         {
             path: '/edit',
             component: EditPage
+        },
+        {
+            path: '/myinfo',
+            component: MyInfoPage
         }
     ]
 });

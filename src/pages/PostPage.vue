@@ -4,10 +4,10 @@
     <SurveyContent></SurveyContent>
     <ItemLine></ItemLine>
     <div class="add_line">
-        <span id="plus_btn">
+        <span class="plus_btn">
 			<i class="fas fa-plus-circle"></i>
 		</span>
-        <button id="plus_txt">새 답변 추가</button>
+        <button class="plus_txt">새 답변 추가</button>
     </div><br>
     <Option></Option>
 </div>
@@ -36,17 +36,17 @@ export default {
 </script>
 
 <style>
-    .add_line{
-        text-align: center;
-    }
-    #plus_btn {
+.add_line{
+  text-align: center;
+}
+.plus_btn {
         float:left;
         margin-left:10px;
         background: white;
         color:rgb(205, 41, 16);
         font-size: 20px;
-    }
-    #plus_txt {
+}
+.plus_txt {
         width: 81%;
         height: 30px;
         color: rgb(205, 41, 16);
@@ -55,5 +55,5 @@ export default {
         font-size: 15px;
         margin-left:5px;
         padding:0;
-    }
+}
 </style>
