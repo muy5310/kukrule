@@ -53,14 +53,10 @@ export default {
 </script>
 
 <style scoped>
-    .input_box{
-        margin:20px 0;
-    }
-    .myinfo_input{
-        border:none;
-        border-bottom: solid 1px gray;
-        margin:0 5px;
-        width:33%;
+	#my_complete {
+		font-weight: bold;
+		color:white;
+        float: right;
     }
     #myinfo_box{
         text-align: center;
@@ -91,13 +87,17 @@ export default {
         font-weight: bold;
         margin-bottom: 10px;
     }
+    .input_box{
+        margin:20px 0;
+    }
+    .myinfo_input{
+        border:none;
+        border-bottom: solid 1px gray;
+        margin:0 5px;
+        width:33%;
+    }
     #pw_text{
         margin-left:5%;
-    }
-	#my_complete {
-		font-weight: bold;
-		color:white;
-        float: right;
     }
     #mybtn_box{
         margin:20px 0;
