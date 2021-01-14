@@ -10,13 +10,16 @@ export default {
 </script>
 
 <style>
-/* 처음 큰 dif\v */
+/* 처음 큰 div */
 .app {
   width:100%;
 }
 /* 박스 그림자 */
 .shadow {
   box-shadow: 5px 10px 10px rgb(0, 0, 0, 0.1);
+}
+.center_set{
+  text-align: center;
 }
 /* 상단바 */
 .top_header{

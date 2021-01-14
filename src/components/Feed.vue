@@ -50,6 +50,11 @@ export default {
 </script>
 
 <style scoped>
+	/* .btn_none{
+		border: none;
+		background: none;
+		padding:none;
+	} */
     .main_contents{
 		border:none;
 		border-top:solid 2px gray;
