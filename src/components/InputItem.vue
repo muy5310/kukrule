@@ -1,7 +1,7 @@
 <template>
     <div>
     <div class="add_line">
-        <span class="minus_btn">
+        <span class="minus_btn cursorPoint">
 			<i class="fas fa-minus-circle"></i>
 		</span>
         <input class="input_form" type="text" placeholder="항목" />

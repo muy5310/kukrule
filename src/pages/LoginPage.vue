@@ -4,7 +4,7 @@
         <div id="login_box">
             <input class="login_input" type="text" placeholder="이메일주소 입력" id="userid"><br>
             <input class="login_input" type="password" placeholder="비밀번호 입력" id="userpw"><br>
-            <button id="login_btn" type="submit">로그인</button>
+            <button class="login_btn cursorPoint" type="submit" v-on:click="mainMove">로그인</button>
 	
         </div>
         <div id="box_bottom">
@@ -20,10 +20,10 @@
 		</p>
 		<!-- 다 비공식 로고 -->
         <div id="sns_box"> 
-            <button type="button" class="snsbtn naver_btn"><img class="logo_size" src="../image/naverlogo.png"/> </button>
-            <button type="button" class="snsbtn facebook_btn"><i class="fab fa-facebook-f"></i></button> 
-            <button type="button" class="snsbtn kakao_btn"><i class="fas fa-comment"></i></button> 
-            <button type="button" class="snsbtn google_btn"><img class="logo_size" src="../image/googlelogo.png"/></button> 
+            <button type="button" class="snsbtn naver_btn cursorPoint"><img class="logo_size" src="../image/naverlogo.png"/> </button>
+            <button type="button" class="snsbtn facebook_btn cursorPoint"><i class="fab fa-facebook-f"></i></button> 
+            <button type="button" class="snsbtn kakao_btn cursorPoint"><i class="fas fa-comment"></i></button> 
+            <button type="button" class="snsbtn google_btn cursorPoint"><img class="logo_size" src="../image/googlelogo.png"/></button> 
         </div>
         <div id="login_bottom">
             <a class="bottom_text" href="">회원가입</a>
@@ -39,6 +39,14 @@ import AutoLogin from '../components/AutoLogin.vue';
 export default {
     components:{
         AutoLogin
+    },
+    methods:{
+        mainLink: function(){
+            this.$router.push({path:'/'});
+        },
+        mainMove: function(){
+            setTimeout(this.mainLink, 500);
+        }
     }
 }
 </script>
@@ -65,13 +73,13 @@ export default {
         margin: 1%;
     }
         
-    #login_btn {
+    .login_btn {
 		margin:1%;
         background: linear-gradient(to right, #6478FB, #8763FB);
         color: white;
         border: none;
         border-radius: 5px;
-        width: 90%;
+        width: 92%;
         height: 40px;
         font-weight: bold;
     }
@@ -81,6 +89,9 @@ export default {
         text-decoration: none;
         color: #464646;
         margin: 0 2% 0 0;
+    }
+    .login_achtext:hover{
+        text-decoration: underline;
     }
     .login_sns{
 		width:100%;
@@ -137,5 +148,8 @@ export default {
         text-decoration: none;
         color: #464646;
         margin: 0 0 0 4%;
+    }
+    .bottom_text:hover{
+        text-decoration: underline;
     }
 </style>

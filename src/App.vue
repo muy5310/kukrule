@@ -21,13 +21,21 @@ export default {
 .center_set{
   text-align: center;
 }
+/* 커서 모양 포인터로 변경 */
+.cursorPoint{
+  cursor: pointer;
+}
+.cursorPoint:hover{
+  background: rgb(233, 233, 233);
+  color: rgb(100, 58, 63);
+}
 /* 상단바 */
 .top_header{
-		text-align: center;
-    color:white;
-		padding:13px;
-		background: linear-gradient(to right, #fbcac9, #8ca6ce);
-    margin-bottom: 10px;
+	text-align: center;
+  color:white;
+	padding:13px;
+	background: linear-gradient(to right, #fbcac9, #8ca6ce);
+  margin-bottom: 10px;
 }
 .top_back{
 	float:left;
@@ -41,19 +49,38 @@ export default {
   text-align: center;
 }
 .plus_btn {
-        float:left;
-        margin-left:10px;
-        background: white;
-        color:rgb(205, 41, 16);
-        font-size: 20px;
+  float:left;
+  margin-left:10px;
+  background: white;
+  color:rgb(205, 41, 16);
+  font-size: 20px;
 }
 .plus_txt {
-        width: 81%;
-        height: 30px;
-        color: rgb(205, 41, 16);
-        background: none;
-        border: none;
-        font-size: 15px;
-        margin-left:5px;
+  width: 81%;
+  height: 30px;
+  color: rgb(205, 41, 16);
+  background: none;
+  border: none;
+  font-size: 15px;
+  margin-left:5px;
+}
+/* SNS 아이콘  */
+.naver_btn {
+  background: #21C603;
+  border:none;
+  color: white;
+}
+        
+.facebook_btn {
+  background: #3A589E;
+  border-color: #3A589E;
+  color: white;
+}
+.kakao_btn {
+  background: #F9E000;
+  border-color: #F9E000;
+}
+.kakao_btn>i {
+  color: #3B1C1C
 }
 </style>

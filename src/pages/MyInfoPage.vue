@@ -1,26 +1,26 @@
 <template>
     <div class="app">
         <div class="top_header">
-        <span class="top_back">
+        <span class="top_back cursorPoint" v-on:click="backMove">
 			<i class="fas fa-times"></i>
 		</span>
 		<label class="top_title">내 정보</label>
-        <span id="my_complete">
+        <span class="my_complete cursorPoint">
 			<i class="fas fa-check"></i>
 		</span></div>
-        <div id="myinfo_box">
-            <div id="myinfo_profile">
+        <div class="myinfo_box">
+            <div class="myinfo_profile cursorPoint">
                 <img id="profile_icon" src="../image/profile.jpg">
                 <div>Nickname</div>
             </div>
-            <div class="mynum_box">
+            <div class="mynum_box cursorPoint">
                 <span class="mynum">5</span>
-                <label class="mynum_label">나의 설문</label>
+                <label class="mynum_label cursorPoint">나의 설문</label>
             </div>
                 
-            <div class="mynum_box">
+            <div class="mynum_box cursorPoint">
                 <span class="mynum">32</span>
-                <label class="mynum_label">나의 선택</label>
+                <label class="mynum_label cursorPoint">나의 선택</label>
             </div>
         </div>
         <div class="center_set input_box">
@@ -33,10 +33,10 @@
         
         <AutoLogin></AutoLogin><br>
         <div id="mybtn_box">
-            <button class="my_btn my_survey shadow" type="button">나의 설문</button>
-            <button class="my_btn my_choice shadow" type="button">나의 선택</button>
+            <button class="my_btn my_survey shadow cursorPoint" type="button">나의 설문</button>
+            <button class="my_btn my_choice shadow cursorPoint" type="button">나의 선택</button>
         </div>
-        <TimeLine></TimeLine>
+        <TimeLine v-on:receiveEvent="commentMove"></TimeLine>
     </div>
 </template>
 
@@ -48,23 +48,37 @@ export default {
     components:{
         AutoLogin,
         TimeLine
+    },
+    methods:{
+        backLink: function(){
+            this.$router.go(-1);
+        },
+        backMove: function(){
+            setTimeout(this.backLink, 500);
+        },
+        commentLink:function(){
+        this.$router.push({path:'/comment'});
+        },
+        commentMove: function(){
+        setTimeout(this.commentLink, 500);
+        }
     }
 }
 </script>
 
 <style scoped>
-	#my_complete {
+	.my_complete {
 		font-weight: bold;
 		color:white;
         float: right;
     }
-    #myinfo_box{
+    .myinfo_box{
         text-align: center;
         justify-content: center;
         display:flex;
         flex-direction: row;
     }
-    #myinfo_profile{
+    .myinfo_profile{
         display:flex;
         flex-direction: column;
         width:30%;

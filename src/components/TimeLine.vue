@@ -1,7 +1,7 @@
 <template>
 <div class=timeline>
-  <Feed></Feed>
-  <Feed></Feed>
+  <Feed v-on:commentPage="submitEvent"></Feed>
+  <Feed v-on:commentPage="submitEvent"></Feed>
 </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'TimeLine',
   components: {
     Feed
+  },
+  methods:{
+    submitEvent: function(){
+      this.$emit('receiveEvent');
+    }
   }
 }
 </script>
