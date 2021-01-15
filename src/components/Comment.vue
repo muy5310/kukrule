@@ -20,6 +20,9 @@ export default {
         padding-top:10px;
         /* padding-bottom: 10px; */
     }
+    .comment_box:hover{
+        background: rgb(233, 233, 233);
+    }
     .profile {
         margin:3px;
         padding-top:19px;

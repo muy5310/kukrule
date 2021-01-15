@@ -3,14 +3,14 @@
         <img class="kukrule_logo" src='../image/kukrulelogo.png' />
 		<span class="top_search">
 			<input class="search_input" type="text" placeholder="검색">
-			<span class="search_btn">
+			<span class="search_btn cursorPoint">
                 <i class="fas fa-search"></i>
             </span>
 		</span>
-		<span class="top_func">
+		<span class="top_func cursorPoint">
             <i class="fas fa-ellipsis-h"></i> 
         </span>
-		<span class="top_func">
+		<span class="top_func cursorPoint" v-on:click="movePost">
             <i class="fas fa-plus"></i>
         </span>
     </div>
@@ -18,7 +18,11 @@
 
 <script>
 export default {
-    
+    methods:{
+        movePost: function(){
+            this.$emit("postPage");
+        }
+    }
 }
 </script>
 

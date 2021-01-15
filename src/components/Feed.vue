@@ -2,7 +2,7 @@
     <div class="main_contents">
 		<div class="content_head">
             <span class="head_title">설문제목</span>
-			<button class="more_btn"><i class="fas fa-ellipsis-v"></i></button>
+			<button class="more_btn cursorPoint"><i class="fas fa-ellipsis-v"></i></button>
 				<div class="middle_line">	
 					<!-- <span>카테고리</span>  -->
 					<span class="head_period">설문기간</span>
@@ -10,7 +10,7 @@
 				</div>
 			</div><br>
 			<div class="content_body">설문본문
-				<button class="body_detail">...자세히 보기</button>
+				<button class="body_detail cursorPoint">...자세히 보기</button>
 			</div>
 			<SurveyLine></SurveyLine>
 			<div class="contents_vote">
@@ -18,19 +18,19 @@
 				<span>명 투표</span>
 				<span class="vote_detail">
 					<span>
-						<i class="far fa-heart"></i>
+						<i class="far fa-heart cursorPoint"></i>
 						<label class="like_num">95</label>
 					</span>					
-                    <span class="share_btn">
+                    <span class="share_btn cursorPoint">
 						<i class="fas fa-share-alt"></i>
 					</span>
 				</span></div><br>
 				
-			<div class="comment"> 
+			<div class="comment cursorPoint" v-on:click="moveComment"> 
 				<span>
 					<i class="far fa-comment-dots"></i>
 				</span>
-				<label id="comment_label">댓글</label>
+				<label class="comment_label">댓글</label>
 				<span class="comment_num">608</span>
 			</div>
             <Comment></Comment>
@@ -45,7 +45,12 @@ export default {
     components:{
         Comment,
 		SurveyLine
-    }
+	},
+	methods:{
+		moveComment: function(){
+			this.$emit('commentPage')
+		}
+	}
 }
 </script>
 
@@ -120,7 +125,8 @@ export default {
 		margin-bottom:0px;
 		text-align:center;
 	}
-	#comment_label{
+	.comment_label{
 		margin:0 4px;
+		cursor: pointer;
 	}
 </style>

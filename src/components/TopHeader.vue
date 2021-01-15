@@ -1,16 +1,21 @@
 <template>
     <div class="top_header">
-        <span class="top_back">
+        <span class="top_back cursorPoint" v-on:click="moveMain">
 			<i class="fas fa-arrow-left"></i>
 		</span>
 		<label class="top_title">{{propsdata}}</label>
-		<label class="complete_btn shadow">{{icondata}}</label>
+		<label class="complete_btn shadow cursorPoint" v-on:click="moveMain">{{icondata}}</label>
     </div>
 </template>
 
 <script>
 export default {
-	props:['propsdata','icondata']
+	props:['propsdata','icondata'],
+	methods:{
+		moveMain: function(){
+			this.$emit('mainPage');
+		}
+	}
 }
 </script>
 

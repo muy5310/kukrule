@@ -1,6 +1,6 @@
 <template>
     <div>
-		<button class="survey_item">설문항목</button>
+		<button class="survey_item cursorPoint">설문항목</button>
 	</div>
 </template>
 

@@ -1,10 +1,10 @@
 <template>
 <div class="app">
-    <TopHeader v-bind:propsdata="title"></TopHeader>
+    <TopHeader v-bind:propsdata="title" v-on:mainPage="mainMove"></TopHeader>
     <div id="input_line">
 		<span>댓글</span>
 		<span class="comment_num">12</span>
-		<span id="comment_setting">
+		<span class="comment_setting cursorPoint">
 			<i class="fas fa-sliders-h"></i>
 		</span>
 		<div class="comment_input">
@@ -12,7 +12,7 @@
                 <i class="fas fa-user-circle"></i>
             </span>
             <input type="text" placeholder="댓글을 입력하세요.">
-            <span class="comment_btn">
+            <span class="comment_btn cursorPoint">
                 <i class="far fa-paper-plane"></i>
             </span>
         </div>
@@ -34,6 +34,14 @@ export default {
     components: {
         TopHeader,
         CommentLine
+    },
+    methods:{
+        mainLink: function(){
+            this.$router.go(-1);
+        },
+        mainMove: function(){
+            setTimeout(this.mainLink, 500);
+        }
     }
 }
 </script>
@@ -42,7 +50,7 @@ export default {
     .comment_num{
 		color:gray;
 	}
-	#comment_setting {
+	.comment_setting {
 		float:right;
         padding-right:4px;
 	}

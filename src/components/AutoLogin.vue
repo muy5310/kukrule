@@ -1,7 +1,7 @@
 <template>
     <span class="bottom_btn">
 			<p id="auto_login">자동로그인</p>
-			<input id="auto_check" type="checkbox"/>
+			<input class="auto_check cursorPoint" type="checkbox"/>
 	</span>
 </template>
 
@@ -17,7 +17,7 @@ export default {
         float: left;
         margin: 0 0 0 4%;
     }
-    #auto_check {
+    .auto_check {
         float: left;
     }
 </style>

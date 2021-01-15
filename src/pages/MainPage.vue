@@ -1,7 +1,7 @@
 <template>
   <div class="app">
-    <TopMenu></TopMenu>
-    <TimeLine></TimeLine>
+    <TopMenu v-on:postPage="postMove"></TopMenu>
+    <TimeLine v-on:receiveEvent="commentMove"></TimeLine>
   </div>
 </template>
 
@@ -13,6 +13,20 @@ export default {
   components: {
     TopMenu,
     TimeLine
+  },
+  methods:{
+    postLink:function(){
+      this.$router.push({path:'/post'});
+    },
+    postMove:function(){
+      setTimeout(this.postLink, 500);
+    },
+    commentLink:function(){
+      this.$router.push({path:'/comment'});
+    },
+    commentMove: function(){
+      setTimeout(this.commentLink, 500);
+    }
   }
 }
 </script>
