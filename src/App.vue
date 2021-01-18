@@ -26,9 +26,33 @@ export default {
   cursor: pointer;
 }
 .cursorPoint:hover{
-  background: rgb(233, 233, 233);
-  color: rgb(100, 58, 63);
+  opacity: 0.7;
 }
+.btnPoint{
+  cursor: pointer;
+}
+.btnPoint:hover{
+  background: linear-gradient(to right, #F86461, #669EF4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* .btnPoint i {
+  background: linear-gradient(to right, #fbcac9, #8ca6ce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btnPoint:hover {
+  background: linear-gradient(to right, #fbcac9, #8ca6ce);
+}
+
+.btnPoint:hover i {
+  background: none;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+} */
+
 /* 상단바 */
 .top_header{
 	text-align: center;
@@ -63,6 +87,11 @@ export default {
   border: none;
   font-size: 15px;
   margin-left:5px;
+  cursor:pointer;
+}
+.plus_txt:hover {
+  background: rgb(233, 233, 233);
+	opacity: 0.7;
 }
 /* SNS 아이콘  */
 .naver_btn {
@@ -70,7 +99,6 @@ export default {
   border:none;
   color: white;
 }
-        
 .facebook_btn {
   background: #3A589E;
   border-color: #3A589E;

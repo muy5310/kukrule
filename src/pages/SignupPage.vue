@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <div class="signup_top">
-            <span class="signup_back cursorPoint" v-on:click="backMove">
+            <span class="signup_back btnPoint" v-on:click="backMove">
 				<i class="fas fa-arrow-left"></i>
 			</span>
         </div>

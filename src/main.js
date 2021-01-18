@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
-import { IntroPage, MainPage, CommentPage, PostPage, EditPage, LoginPage, SignupPage, MyInfoPage } from './pages';
+import { IntroPage, MainPage, CommentPage, PostPage, EditPage, LoginPage, SignupPage, MyInfoPage, Test } from './pages';
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);
@@ -49,6 +49,10 @@ const router = new VueRouter({
         {
             path: '/myinfo',
             component: MyInfoPage
+        },
+        {
+            path: '/test',
+            component: Test
         }
     ]
 });

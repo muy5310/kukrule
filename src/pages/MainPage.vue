@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <TopMenu v-on:postPage="postMove"></TopMenu>
-    <TimeLine v-on:receiveEvent="commentMove"></TimeLine>
+    <TimeLine v-on:receiveEvent="commentMove" ></TimeLine>
   </div>
 </template>
 

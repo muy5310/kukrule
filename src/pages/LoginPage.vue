@@ -26,7 +26,7 @@
             <button type="button" class="snsbtn google_btn cursorPoint"><img class="logo_size" src="../image/googlelogo.png"/></button> 
         </div>
         <div id="login_bottom">
-            <a class="bottom_text" href="">회원가입</a>
+            <a class="bottom_text" href="./signup">회원가입</a>
             <a class="bottom_text" href="">고객센터</a>
         </div>
     </div>

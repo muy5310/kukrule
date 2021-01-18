@@ -4,7 +4,7 @@
     <div id="input_line">
 		<span>댓글</span>
 		<span class="comment_num">12</span>
-		<span class="comment_setting cursorPoint">
+		<span class="comment_setting btnPoint">
 			<i class="fas fa-sliders-h"></i>
 		</span>
 		<div class="comment_input">
@@ -12,7 +12,7 @@
                 <i class="fas fa-user-circle"></i>
             </span>
             <input type="text" placeholder="댓글을 입력하세요.">
-            <span class="comment_btn cursorPoint">
+            <span class="comment_btn btnPoint">
                 <i class="far fa-paper-plane"></i>
             </span>
         </div>
