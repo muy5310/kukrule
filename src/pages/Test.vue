@@ -12,14 +12,13 @@
 			<div class="content_body">설문본문
 				<button class="body_detail cursorPoint">...자세히 보기</button>
 			</div>
-			<SurveyLine></SurveyLine>
 			<div class="contents_vote">
 				<span class="vote_num">2.8</span>
 				<span>명 투표</span>
 				<span class="vote_detail">
 					<span>
-						<i class="far fa-heart btnPoint" v-if="liked" v-on:click="onClickBtn"></i>
-						<i class="fas fa-heart cursorPoint heartPoint" v-else v-on:click="onClickBtn"></i>
+						<i class="far fa-heart btnPoint" v-if="liked" @click="onClickBtn"></i>
+						<i class="fas fa-heart cursorPoint heartPoint" v-else @click="onClickBtn"></i>
                         <label class="like_num">95</label>
 					</span>					
                     <span class="share_btn btnPoint">
@@ -27,25 +26,13 @@
 					</span>
 				</span></div><br>
 				
-			<div class="comment" v-on:click="moveComment"> 
-				<span>
-					<i class="far fa-comment-dots"></i>
-				</span>
-				<label class="comment_label">댓글</label>
-				<span class="comment_num">608</span>
-			</div>
-            <Comment></Comment>
 		</div>
 </template>
 
 <script>
-import Comment from './Comment.vue';
-import SurveyLine from './SurveyLine.vue';
 
 export default {
     components:{
-        Comment,
-		SurveyLine
 	},
 	data:function(){
 		return{
@@ -53,9 +40,9 @@ export default {
         }
     },
 	methods:{
-		moveComment: function(){
-			this.$emit('commentPage')
-		},
+		// moveComment: function(){
+		// 	this.$emit('commentPage')
+		// },
 		onClickBtn: function() {
             this.liked = !this.liked;
 		}
@@ -121,10 +108,9 @@ export default {
 		/* .contents_vote *{
 			:0 0 0 1%;
 		} */
-	.heartPoint{
-		background: linear-gradient(to top, #ff3557 0%, #ff7e7e 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
+	.i.press{
+		animation: size .4s;
+		color:blueviolet;
 	}
     .like_num{
         margin-left:3px;

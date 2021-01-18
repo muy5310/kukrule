@@ -1,16 +1,16 @@
 <template>
     <div class="top_box">
-        <img class="kukrule_logo" src='../image/kukrulelogo.png' />
+        <img class="kukrule_logo cursorPoint" src='../image/kukrulelogo.png' />
 		<span class="top_search">
 			<input class="search_input" type="text" placeholder="검색">
-			<span class="search_btn cursorPoint">
+			<span class="search_btn btnPoint">
                 <i class="fas fa-search"></i>
             </span>
 		</span>
-		<span class="top_func cursorPoint">
+		<span class="top_func btnPoint">
             <i class="fas fa-ellipsis-h"></i> 
         </span>
-		<span class="top_func cursorPoint" v-on:click="movePost">
+		<span class="top_func btnPoint" v-on:click="movePost">
             <i class="fas fa-plus"></i>
         </span>
     </div>
@@ -24,6 +24,7 @@ export default {
         }
     }
 }
+
 </script>
 
 <style scoped>

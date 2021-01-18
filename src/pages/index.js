@@ -21,3 +21,6 @@ from './EditPage.vue';
 
 export { default as MyInfoPage }
 from './MyInfoPage.vue';
+
+export { default as Test }
+from './Test.vue';

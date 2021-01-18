@@ -1,6 +1,6 @@
 <template>
     <div class="top_header">
-        <span class="top_back cursorPoint" v-on:click="moveMain">
+        <span class="top_back btnPoint" v-on:click="moveMain">
 			<i class="fas fa-arrow-left"></i>
 		</span>
 		<label class="top_title">{{propsdata}}</label>
