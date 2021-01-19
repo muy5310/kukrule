@@ -42,13 +42,15 @@ export default {
     border-radius:3px;
 }
 .choice_item {
-	width:50%;
+	width:70%;
 	text-align:left;
 	background:0;
     height: 30px;
     margin-bottom:10px;
     border:none;
-    background-image: linear-gradient(to top, #fae924 0%,  #fefa80 100%);
+    background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #f1e7f5 100%);
+    /* 노랑색  */
+    /* background-image: linear-gradient(to top, #fae924 0%,  #fefa80 100%); */
     /* background: linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%); */
     border-radius:3px;
 	}

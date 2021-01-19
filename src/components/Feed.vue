@@ -2,7 +2,10 @@
     <div class="main_contents">
 		<div class="content_head">
             <span class="head_title">설문제목</span>
-			<button class="more_btn"><i class="fas fa-ellipsis-v"></i></button>
+			<button class="more_btn" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
+				<ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
+					<PostModal></PostModal>
+				</ModalView> 
 				<div class="middle_line">	
 					<!-- <span>카테고리</span>  -->
 					<span class="head_period">설문기간</span>
@@ -41,16 +44,21 @@
 <script>
 import Comment from './Comment.vue';
 import SurveyLine from './SurveyLine.vue';
+import ModalView from './ModalView.vue';
+import PostModal from './modals/PostModal.vue';
 
 export default {
     components:{
         Comment,
-		SurveyLine
+		SurveyLine,
+		ModalView,
+        PostModal
 	},
 	data:function(){
 		return{
 			liked:true,
-			postlike:95
+			postlike:95,
+			isModalViewed: false
         }
     },
 	methods:{

@@ -4,9 +4,12 @@
     <div id="input_line">
 		<span>댓글</span>
 		<span class="comment_num">12</span>
-		<span class="comment_setting btnPoint">
+		<span class="comment_setting btnPoint" @click="isModalViewed = true">
 			<i class="fas fa-sliders-h"></i>
 		</span>
+        <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
+            <CommentModal></CommentModal>
+        </ModalView> 
 		<div class="comment_input">
 			<span class="comment_profile">
                 <i class="fas fa-user-circle"></i>
@@ -24,16 +27,21 @@
 <script>
 import TopHeader from '../components/TopHeader.vue';
 import CommentLine from '../components/CommentLine.vue';
+import ModalView from '../components/ModalView.vue';
+import CommentModal from '../components/modals/CommentModal.vue';
 
 export default {
     data:function(){
         return{
-            title:'(설문제목)'
+            title:'(설문제목)',
+            isModalViewed: false
         }
     },
     components: {
         TopHeader,
-        CommentLine
+        CommentLine,
+        ModalView,
+        CommentModal
     },
     methods:{
         mainLink: function(){
