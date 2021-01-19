@@ -18,6 +18,7 @@ export default {
         margin: 0 0 0 4%;
     }
     .auto_check {
+        margin-top:5px;
         float: left;
     }
 </style>

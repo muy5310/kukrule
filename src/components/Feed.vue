@@ -19,8 +19,8 @@
 				<span class="vote_detail">
 					<span>
 						<i class="far fa-heart btnPoint" v-if="liked" v-on:click="onClickBtn"></i>
-						<i class="fas fa-heart cursorPoint heartPoint" v-else v-on:click="onClickBtn"></i>
-                        <label class="like_num">95</label>
+						<i class="fas fa-heart cursorPoint heartPoint" v-else v-on:click="cancelClick"></i>
+                        <label class="like_num">{{postlike}}</label>
 					</span>					
                     <span class="share_btn btnPoint">
 						<i class="fas fa-share-alt"></i>
@@ -49,7 +49,8 @@ export default {
 	},
 	data:function(){
 		return{
-            liked:true
+			liked:true,
+			postlike:95
         }
     },
 	methods:{
@@ -57,7 +58,12 @@ export default {
 			this.$emit('commentPage')
 		},
 		onClickBtn: function() {
-            this.liked = !this.liked;
+			this.liked = !this.liked;
+			this.postlike += 1;
+		},
+		cancelClick: function(){
+			this.liked = !this.liked;
+			this.postlike -= 1;
 		}
 	}
 }

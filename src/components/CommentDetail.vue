@@ -3,7 +3,7 @@
         <span class="btn_margin">
 		<i class="far fa-thumbs-up btnPoint" v-if="like" v-on:click="clickUp"></i>
 		<i class="fas fa-thumbs-up cursorPoint upPoint" v-else v-on:click="clickUp"></i>
-		<label class="like_num">95</label>
+		<label class="like_num">{{likenum}}</label>
 		</span>
 
 		<span class="btn_margin">
@@ -21,17 +21,28 @@ export default {
 	data:function(){
 		return{
 			like:true,
-			unlike:true
+			unlike:true,
+			likenum:34
 		}
 	},
 	methods:{
 		clickUp: function(){
 			this.like = !this.like;
 			this.unlike = true;
+			if(this.like==false){
+				this.likenum+=1;
+			}
+			else{
+				this.likenum-=1;
+			}
 		},
 		clickDown: function(){
 			this.unlike = !this.unlike;
+			if(this.like==false){
+				this.likenum -= 1;
+			}
 			this.like = true;
+			
 		}
 	}
 }

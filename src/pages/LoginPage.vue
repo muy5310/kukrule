@@ -62,6 +62,8 @@ export default {
         padding: 10%;
         font-size: 30px;
 		font-weight:bold;
+        margin-top:0;
+        padding-top: 17%;
     }
     .login_input {
         background: #FFFFFF;

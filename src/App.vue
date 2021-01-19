@@ -16,7 +16,7 @@ export default {
 }
 /* 박스 그림자 */
 .shadow {
-  box-shadow: 5px 10px 10px rgb(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.1);
 }
 .center_set{
   text-align: center;
