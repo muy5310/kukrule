@@ -7,31 +7,52 @@
                 <i class="fas fa-search"></i>
             </span>
 		</span>
-		<span class="top_func btnPoint">
+		<span class="top_func btnPoint" @click="isModalViewed = true">
             <i class="fas fa-ellipsis-h"></i> 
         </span>
 		<span class="top_func btnPoint" v-on:click="movePost">
             <i class="fas fa-plus"></i>
         </span>
+        <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
+            <HomeModal></HomeModal>
+        </ModalView> 
     </div>
 </template>
 
 <script>
+import ModalView from './ModalView.vue';
+import HomeModal from './modals/HomeModal.vue';
+
 export default {
+    components: {
+        ModalView,
+        HomeModal
+	},
+	data() {
+		return{
+			isModalViewed: false
+		};
+	},
     methods:{
         movePost: function(){
             this.$emit("postPage");
         }
-    }
+    },
+    
 }
 
 </script>
 
 <style scoped>
     .top_box {
-        width: 100%;
+        position: fixed;
+        top:0;
+        left:0;
+        padding:10px 3px;
+        width: 99%;
 		height: 40px;
 		text-align:center;
+        background: white;
     }
         
     .top_box .kukrule_logo {

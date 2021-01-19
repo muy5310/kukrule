@@ -21,13 +21,14 @@ export default {
 .center_set{
   text-align: center;
 }
-/* 커서 모양 포인터로 변경 */
+/* 커서 모양 포인터로 변경  & 투명도 설정*/
 .cursorPoint{
   cursor: pointer;
 }
 .cursorPoint:hover{
   opacity: 0.7;
 }
+/* 버튼 색상 변경 */
 .btnPoint{
   cursor: pointer;
 }

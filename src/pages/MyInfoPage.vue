@@ -5,7 +5,7 @@
 			<i class="fas fa-times"></i>
 		</span>
 		<label class="top_title">내 정보</label>
-        <span class="my_complete btnPoint">
+        <span class="my_complete btnPoint" v-on:click="backMove">
 			<i class="fas fa-check"></i>
 		</span></div>
         <div class="myinfo_box">
