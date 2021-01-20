@@ -27,7 +27,7 @@
             <label>ID</label>
             <input class="myinfo_input" type="text">
             <label id="pw_text">PW</label>
-            <input class="myinfo_input" type="text">
+            <input class="myinfo_input" type="password">
         </div>
 		<!-- <label class="complete_btn shadow">내 정보</label> -->
         

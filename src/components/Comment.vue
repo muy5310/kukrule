@@ -26,7 +26,7 @@ export default {
         /* padding-top:10px; */
         /* padding-bottom: 10px; */
     }
-    .comment_box:hover{
+    .comment_box:active{
         background: rgb(233, 233, 233);
     }
     .profile {
