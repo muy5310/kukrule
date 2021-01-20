@@ -71,6 +71,7 @@ export default {
         border: none;
 		width:40%;
         margin-top:10px;
+        height: 20px;
     }
         
 	.top_func{
