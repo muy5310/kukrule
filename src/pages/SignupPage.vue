@@ -11,24 +11,24 @@
         </div>
         <div class="signup_btn email_btn cursorPoint">
             <i class="far fa-envelope"></i>
-            <label class="cursorPoint">이메일로 회원가입</label>
+            <label>이메일로 회원가입</label>
         </div>
         <p class="signup_sns">SNS 회원가입</p>
         <div class="signup_btn naver_btn borderNone cursorPoint">
             <img src="../image/naverlogo.png" />
-            <label class="cursorPoint">네이버로 쉬운 가입</label>
+            <label>네이버로 쉬운 가입</label>
         </div>
         <div class="signup_btn facebook_btn borderNone cursorPoint" v-on:click="Signupclick">
             <i class="fab fa-facebook-square"></i>
-            <label class="cursorPoint">페이스북으로 쉬운 가입</label>
+            <label>페이스북으로 쉬운 가입</label>
         </div>
         <div class="signup_btn kakao_btn borderNone cursorPoint">
             <i class="fas fa-comment"></i>
-            <label class="cursorPoint">카카오로 쉬운 가입</label>
+            <label>카카오로 쉬운 가입</label>
         </div>
         <div class="signup_btn google_btn cursorPoint">
             <img src="../image/googlelogo.png" />
-            <label class="cursorPoint">구글로 쉬운 가입</label>
+            <label>구글로 쉬운 가입</label>
         </div>
     </div>  
 </template>
@@ -98,6 +98,7 @@ export default {
     .signup_btn>label {
         font-weight: bold;
         margin-left: -30px;
+        cursor:pointer;
     }
     .borderNone{
         border:none;
