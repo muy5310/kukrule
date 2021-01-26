@@ -5,7 +5,6 @@
             <input class="login_input" type="text" placeholder="이메일주소 입력" id="userid"><br>
             <input class="login_input" type="password" placeholder="비밀번호 입력" id="userpw"><br>
             <button class="login_btn cursorPoint" type="submit" v-on:click="mainMove">로그인</button>
-	
         </div>
         <div id="box_bottom">
             <AutoLogin></AutoLogin>
@@ -55,6 +54,7 @@ export default {
     #login_container {
         text-align: center;
         width: 100%;
+        height: 100%;
         background-color: #E7F0FF;
         padding-bottom: 5%;
     }

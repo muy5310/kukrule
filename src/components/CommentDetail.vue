@@ -8,7 +8,7 @@
 
 		<span class="btn_margin">
 			<i class="far fa-thumbs-down btnPoint"  v-if="unlike" v-on:click="clickDown"></i>
-			<i class="fas fa-thumbs-down cursorPoint downPoint"  v-else v-on:click="clickDown"></i>
+			<i class="fas fa-thumbs-down cursorPoint downPoint" v-else v-on:click="clickDown"></i>
 			<label class="like_ctn">{{unlikeNum}}</label>
 		</span>
 		<span class="btn_margin btnPoint">
