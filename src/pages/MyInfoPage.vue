@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <div class="top_header">
+        <div class="top_header shadow">
         <span class="top_back btnPoint" v-on:click="backMove">
 			<i class="fas fa-times"></i>
 		</span>

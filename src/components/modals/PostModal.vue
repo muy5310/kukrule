@@ -1,7 +1,7 @@
 <template>
     <div class="modal-card shadow">
     <button class="popBtn cursorPoint" v-on:click="editMove">수정</button>
-    <button class="popBtn cursorPoint">삭제</button>
+    <button class="popBtn cursorPoint" v-on:click="removeBtn">삭제</button>
     </div>
 </template>
 
@@ -13,6 +13,9 @@ export default {
         },
         editMove:function(){
             setTimeout(this.editLink, 500);
+        },
+        removeBtn: function() {
+            confirm("정말 삭제 하시겠습니까?");
         }
     }
 }

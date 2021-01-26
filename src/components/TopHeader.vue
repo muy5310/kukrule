@@ -1,5 +1,5 @@
 <template>
-    <div class="top_header">
+    <div class="top_header shadow">
         <span class="top_back btnPoint" v-on:click="moveMain">
 			<i class="fas fa-arrow-left"></i>
 		</span>

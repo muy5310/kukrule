@@ -1,5 +1,5 @@
 <template>
-    <div class="top_box">
+    <div class="top_box shadow">
         <img class="kukrule_logo cursorPoint" src='../image/kukrulelogo.png' />
 		<span class="top_search">
 			<input class="search_input" type="text" placeholder="검색">
@@ -73,7 +73,7 @@ export default {
         margin-top:10px;
         height: 20px;
     }
-        
+    
 	.top_func{
 		float:right;
 		margin:7px 1% 0 1%;

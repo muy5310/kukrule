@@ -1,19 +1,26 @@
 <template>
     <div class="main_contents">
 		<div class="content_head">
-            <span class="head_title">설문제목</span>
+            <span class="head_title">{{postData.title}}</span>
+
 			<button class="more_btn" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
 				<ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
 					<PostModal></PostModal>
-				</ModalView> 
+				</ModalView>
+			<span class="image_btn btnPoint" v-if="imageAttach">
+				<i class="far fa-file-image"></i>
+			</span> 
 				<div class="middle_line">	
 					<!-- <span>카테고리</span>  -->
-					<span class="head_period">설문기간</span>
-					<span class="head_name">설문작성자</span>
+					<span class="head_period">{{postData.date}}</span>
+					<span class="head_name">{{postData.author}}</span>
 				</div>
 			</div><br>
-			<div class="content_body">설문본문
-				<button class="body_detail cursorPoint">...자세히 보기</button>
+			<div class="content_body">{{postData.caption}}
+				<button class="body_detail cursorPoint" v-if="viewmore" v-on:click="moreClick">...자세히 보기</button>
+				<p class="imgBox" v-else><img class="imgSize" v-bind:src="postData.img"></p>
+				<!-- 닫기 버튼 <button class="body_detail cursorPoint" v-if="viewmore" v-on:click="moreClick">닫기</button> -->
+				<br>
 			</div>
 			<SurveyLine></SurveyLine>
 			<div class="contents_vote">
@@ -48,6 +55,10 @@ import ModalView from './ModalView.vue';
 import PostModal from './modals/PostModal.vue';
 
 export default {
+	name:'post',
+	props:{
+		'postData': Object
+	},
     components:{
         Comment,
 		SurveyLine,
@@ -58,7 +69,9 @@ export default {
 		return{
 			liked:true,
 			postlike:95,
-			isModalViewed: false
+			viewmore:true,
+			isModalViewed: false,
+			imageAttach: true
         }
     },
 	methods:{
@@ -72,6 +85,9 @@ export default {
 		cancelClick: function(){
 			this.liked = !this.liked;
 			this.postlike -= 1;
+		},
+		moreClick: function(){
+			this.viewmore = !this.viewmore;
 		}
 	}
 }
@@ -95,6 +111,11 @@ export default {
 		font-size:23px;
 		font-weight: bold;
 		margin-bottom:5px;
+	}
+	.image_btn{
+		float:right;
+		margin-top:2px;
+		margin-right:3px;
 	}
 	.more_btn{
 		float:right;
@@ -126,6 +147,7 @@ export default {
 		background:0;
 		border:0;
 		color:gray;
+		float: right;
 	}
 	.body_item {
 		width:100%;
@@ -170,5 +192,13 @@ export default {
 	.comment_label{
 		margin:0 4px;
 		cursor: pointer;
+	}
+	.imgBox{
+		margin:0;
+		/* text-align: center; */
+	}
+	.imgSize{
+		margin: 20px 0 0 0;
+		width:70%;
 	}
 </style>
