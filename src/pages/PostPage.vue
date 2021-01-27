@@ -1,12 +1,12 @@
 <template>
 <div class="app">
-    <TopHeader v-bind:propsdata="title" v-bind:icondata="icon" v-on:mainPage="mainMove"></TopHeader>
+    <TopHeader v-bind:propsdata="title" v-bind:icondata="icon" v-on:mainPage="mainMove" v-on:backPage="backMove"></TopHeader>
     <div id="post_box">
         <input v-model="newTitle" class="input_form" type="text" placeholder="제목" />
 		<textarea v-model="newCaption" id="explain_form" type="text" placeholder="본문" ></textarea>
         <p class="imgAdd"><input type="file" id="file" class="inputfile" v-on:change="upload">
             <label for="file" class="btnPoint">
-                <i class="far fa-images"></i> 이미지 추가하기 
+                <i class="far fa-images"></i> <span >이미지 추가하기 </span>
             </label><br>
             <img class="imgSize" v-bind:src="newImgSrc">
         </p>
@@ -58,6 +58,12 @@ export default {
                 this.newImgSrc = e.target.result;
             }
         },
+        backLink: function(){
+            this.$router.go(-1);
+        },
+        backMove: function(){
+            setTimeout(this.backLink, 1000);
+        },
         mainLink: function(){
             this.$router.push({path:'/'});
         },
@@ -71,7 +77,7 @@ export default {
                 caption:this.newCaption,
                 date:'2021.05.31',
                 img : this.newImgSrc,
-                author:'비타오백'
+                author:'국룰코인'
             }
             data.unshift(newData);
             this.newTitle = '';

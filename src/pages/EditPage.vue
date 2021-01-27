@@ -1,6 +1,6 @@
 <template>
 <div class="app">
-    <TopHeader v-bind:propsdata="title" v-bind:icondata="icon" v-on:mainPage="mainMove"></TopHeader>
+    <TopHeader v-bind:propsdata="title" v-bind:icondata="icon" v-on:backPage="backMove"></TopHeader>
     <SurveyContent></SurveyContent>
     <ItemLine></ItemLine>
     <div class="add_line">
@@ -33,11 +33,11 @@ export default {
         Option
     },
     methods:{
-        mainLink: function(){
+        backLink: function(){
             this.$router.go(-1);
         },
-        mainMove: function(){
-            setTimeout(this.mainLink, 500);
+        backMove: function(){
+            setTimeout(this.backLink, 500);
         }
     }
 }

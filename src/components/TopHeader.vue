@@ -1,20 +1,38 @@
 <template>
     <div class="top_header shadow">
-        <span class="top_back btnPoint" v-on:click="moveMain">
+        <span class="top_back btnPoint" v-on:click="moveBack">
 			<i class="fas fa-arrow-left"></i>
 		</span>
 		<label class="top_title">{{propsdata}}</label>
-		<label class="complete_btn shadow cursorPoint" v-on:click="moveMain">{{icondata}}</label>
+		<label class="complete_btn shadow cursorPoint" v-if="hidden" v-on:click="moveMain">{{icondata}}</label>
     </div>
 </template>
 
 <script>
 export default {
 	props:['propsdata','icondata'],
+	data:function(){
+		return{
+			hidden:true
+		}
+	},
 	methods:{
 		moveMain: function(){
 			this.$emit('mainPage');
+		},
+		moveBack: function(){
+			this.$emit('backPage');
+		},
+		iconData: function(){
+			if(this.icondata == undefined){
+				this.hidden = false;
+				console.log(this.icondata);
+			}
 		}
+	},
+	//자동으로 메소드 실행시켜주는 함수 
+	beforeMount(){
+		this.iconData();
 	}
 }
 </script>

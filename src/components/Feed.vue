@@ -5,9 +5,9 @@
 
 			<button class="more_btn" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
 				<ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
-					<PostModal></PostModal>
+					<PostModal ></PostModal>
 				</ModalView>
-			<span class="image_btn btnPoint" v-if="imageAttach">
+			<span class="image_btn" v-if="imgShown">
 				<i class="far fa-file-image"></i>
 			</span> 
 				<div class="middle_line">	
@@ -17,8 +17,8 @@
 				</div>
 			</div><br>
 			<div class="content_body">{{postData.caption}}
-				<button class="body_detail cursorPoint" v-if="viewmore" v-on:click="moreClick">...자세히 보기</button>
-				<p class="imgBox" v-else><img class="imgSize" v-bind:src="postData.img"></p>
+				<button class="body_detail cursorPoint" v-show="moreShown" v-if="viewmore" v-on:click="moreClick">...자세히 보기</button>
+				<p class="imgBox" v-else><img class="imgSize" v-if="imgShown" v-bind:src="postData.img"></p>
 				<!-- 닫기 버튼 <button class="body_detail cursorPoint" v-if="viewmore" v-on:click="moreClick">닫기</button> -->
 				<br>
 			</div>
@@ -71,7 +71,9 @@ export default {
 			postlike:95,
 			viewmore:true,
 			isModalViewed: false,
-			imageAttach: true
+			imageAttach: true,
+			imgShown: false,
+			moreShown: false
         }
     },
 	methods:{
@@ -88,7 +90,21 @@ export default {
 		},
 		moreClick: function(){
 			this.viewmore = !this.viewmore;
+		},
+		imgRender: function() {
+			if(this.postData.img != ''){
+				this.imgShown = true;
+			}
+		},
+		letterNum: function() {
+			if(this.postData.caption.length > 150 || this.postData.img != '') {
+				this.moreShown = true;
+			}
 		}
+	},
+	beforeMount(){
+		this.imgRender();
+		this.letterNum();
 	}
 }
 </script>
@@ -116,6 +132,9 @@ export default {
 		float:right;
 		margin-top:2px;
 		margin-right:3px;
+	}
+	.image_btn:hover{
+		opacity: 0.6;
 	}
 	.more_btn{
 		float:right;
