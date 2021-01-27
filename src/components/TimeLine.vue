@@ -1,6 +1,7 @@
 <template>
 <div class=timeline>
   <Feed v-for="(post, i) in postData" v-bind:postData="post" v-bind:key="i" v-on:commentPage="submitEvent"></Feed>
+  
   <!-- <Feed v-on:commentPage="submitEvent"></Feed> -->
 </div>
 </template>
