@@ -6,9 +6,14 @@
 		<textarea v-model="newCaption" id="explain_form" type="text" placeholder="본문" ></textarea>
         <p class="imgAdd"><input type="file" id="file" class="inputfile" v-on:change="upload">
             <label for="file" class="btnPoint">
-                <i class="far fa-images"></i> <span >이미지 추가하기 </span>
+                <i class="far fa-images imgIcon"></i> 
+                <span v-if="!imgExist">이미지 추가하기 </span>
+                <span v-else>이미지 변경하기 </span>
             </label><br>
-            <img class="imgSize" v-bind:src="newImgSrc">
+            <img v-if="imgExist" class="imgSize" v-bind:src="newImgSrc">
+            <span class="cursorPoint" v-if="imgExist" v-on:click="imgDelete">
+                <i class="fas fa-times-circle"></i>
+            </span>
         </p>
         
     </div>
@@ -39,7 +44,8 @@ export default {
             postData :data,
             newTitle: '',
             newCaption: '', 
-            newImgSrc:''
+            newImgSrc:'none',
+            imgExist:false
         }
     },
     components: {
@@ -57,6 +63,11 @@ export default {
             reader.onload = e => {
                 this.newImgSrc = e.target.result;
             }
+            this.imgExist = true;
+        },
+        imgDelete: function(){
+            this.imgExist = false;
+            this.newImgSrc = 'none';
         },
         backLink: function(){
             this.$router.go(-1);
@@ -82,7 +93,7 @@ export default {
             data.unshift(newData);
             this.newTitle = '';
             this.newCaption = '';
-            this.newImgSrc = '';
+            this.newImgSrc = 'none';
             setTimeout(this.mainLink, 1000);}
         }
     }
@@ -103,7 +114,11 @@ export default {
     width: 99%;
     height: 90px;
 }
+.imgIcon{
+    margin-right:5px;
+}
 .imgAdd{
+    margin-top:0;
     text-align: center;
 }
 .inputfile{
