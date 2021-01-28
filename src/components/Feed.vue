@@ -5,7 +5,7 @@
 
 			<button class="more_btn" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
 				<ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
-					<PostModal ></PostModal>
+					<PostModal v-on:deleteSubmit="deleteRe"></PostModal>
 				</ModalView>
 			<span class="image_btn" v-if="imgShown">
 				<i class="far fa-file-image"></i>
@@ -92,14 +92,17 @@ export default {
 			this.viewmore = !this.viewmore;
 		},
 		imgRender: function() {
-			if(this.postData.img != ''){
+			if(this.postData.img != 'none'){
 				this.imgShown = true;
 			}
 		},
 		letterNum: function() {
-			if(this.postData.caption.length > 150 || this.postData.img != '') {
+			if(this.postData.caption.length > 150 || this.postData.img != 'none') {
 				this.moreShown = true;
 			}
+		},
+		deleteRe: function() {
+			this.$emit('deleteDo');
 		}
 	},
 	beforeMount(){
@@ -214,6 +217,7 @@ export default {
 	}
 	.imgBox{
 		margin:0;
+		/* 피드에서 이미지 가운데 정렬 */
 		/* text-align: center; */
 	}
 	.imgSize{
