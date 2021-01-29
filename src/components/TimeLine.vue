@@ -8,13 +8,13 @@
 
 <script>
 import Feed from './Feed.vue';
-import data from '../assets/postData.js';
+import postData from '../assets/postData.js';
 
 export default {
   name: 'TimeLine',
   data: function(){
     return{
-      postData : data
+      postData : postData
     }
   },
   components: {
@@ -25,7 +25,7 @@ export default {
       this.$emit('receiveEvent');
     },
     deleteItem(i){
-      this.postData.splice(i,1);
+      this.postData.splice(i,1);      
     }
   }
 }

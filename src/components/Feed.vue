@@ -4,7 +4,7 @@
             <span class="head_title">{{postData.title}}</span>
 
 			<button class="more_btn" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
-				<ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
+				<ModalView v-if="isModalViewed" @close-modal="isModalViewed = false" >
 					<PostModal v-on:deleteSubmit="deleteRe"></PostModal>
 				</ModalView>
 			<span class="image_btn" v-if="imgShown">
@@ -75,7 +75,7 @@ export default {
 			imgShown: false,
 			moreShown: false
         }
-    },
+	},
 	methods:{
 		moveComment: function(){
 			this.$emit('commentPage')
@@ -103,6 +103,13 @@ export default {
 		},
 		deleteRe: function() {
 			this.$emit('deleteDo');
+			setTimeout(this.dataCheck, 300);
+		},
+		dataCheck: function(){
+			this.isModalViewed = false;
+			console.log('jo')
+			this.imgRender();
+			this.letterNum();
 		}
 	},
 	beforeMount(){
