@@ -1,13 +1,17 @@
 <template>
     <div class="box">
-		<button class="survey_item cursorPoint" v-if="select" v-on:click= "clickItem">설문항목</button>
-        <button class="choice_item cursorPoint" v-else v-on:click= "clickItem">설문항목</button>
+		<button class="survey_item cursorPoint" v-if="select" v-on:click= "clickItem">{{ itemList }}</button>
+        <button class="choice_item cursorPoint" v-else v-on:click= "clickItem">{{ itemList }}</button>
 	</div>
 </template>
 
 <script>
 
 export default {
+    name:'item',
+    props:{
+        'itemList': String
+    },
     data:function(){
         return{
             select:true
@@ -23,7 +27,7 @@ export default {
 
 <style scoped>
 .box{
-    width: 100%;
+    width: 95%;
     height: 30px;
     border:none;
     border-radius:4px;

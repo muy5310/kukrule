@@ -25,7 +25,7 @@ export default {
       this.$emit('receiveEvent');
     },
     deleteItem(i){
-      this.postData.splice(i,1);      
+      this.postData.splice(i,1);
     }
   }
 }
