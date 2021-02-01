@@ -2,7 +2,7 @@
 <div class="app">
     <TopHeader v-bind:propsdata="title" v-bind:icondata="icon" v-on:mainPage="mainMove" v-on:backPage="backMove"></TopHeader>
     <div id="post_box">
-        <input v-model="newTitle" class="input_form" type="text" placeholder="제목" />
+        <input v-model="newTitle" class="title_form" type="text" placeholder="제목" />
 		<textarea v-model="newCaption" id="explain_form" type="text" placeholder="본문" ></textarea>
         <p class="imgAdd"><input type="file" id="file" class="inputfile" v-on:change="upload">
             <label for="file" class="btnPoint">
@@ -17,8 +17,18 @@
         </p>
         
     </div>
-
-    <ItemLine></ItemLine>
+     <div class="add_line">
+        <span class="minus_btn cursorPoint">
+			<i class="fas fa-minus-circle"></i>
+		</span>
+        <input v-model="newItems[0]" class="input_form" type="text" placeholder="항목" />
+    </div><br>
+    <div class="add_line">
+        <span class="minus_btn cursorPoint">
+			<i class="fas fa-minus-circle"></i>
+		</span>
+        <input v-model="newItems[1]" class="input_form" type="text" placeholder="항목" />
+    </div><br>
     <div class="add_line">
         <span class="plus_btn cursorPoint">
 			<i class="fas fa-plus-circle"></i>
@@ -33,7 +43,6 @@
 import TopHeader from '../components/TopHeader.vue';
 // import SurveyContent from '../components/SurveyContent.vue';
 import Option from '../components/Option.vue';
-import ItemLine from '../components/ItemLine.vue';
 import data from '../assets/postData.js';
 
 export default {
@@ -45,13 +54,15 @@ export default {
             newTitle: '',
             newCaption: '', 
             newImgSrc:'none',
-            imgExist:false
+            newItems:[],
+            imgExist:false,
+            postlike:0,
+            viewmore:false
         }
     },
     components: {
         TopHeader,
         // SurveyContent,
-        ItemLine,
         Option
     },
     methods:{
@@ -64,10 +75,12 @@ export default {
                 this.newImgSrc = e.target.result;
             }
             this.imgExist = true;
+            this.viewmore = true;
         },
         imgDelete: function(){
             this.imgExist = false;
             this.newImgSrc = 'none';
+            this.viewmore = false;
         },
         backLink: function(){
             this.$router.go(-1);
@@ -88,7 +101,12 @@ export default {
                 caption:this.newCaption,
                 date:'2021.05.31',
                 img : this.newImgSrc,
-                author:'국룰코인'
+                items : this.newItems,
+                author:'국룰코인',
+                liked : false,
+                postlike : this.postlike,
+                moreClick : false,
+                viewmore: this.viewmore
             }
             data.unshift(newData);
             this.newTitle = '';
@@ -104,7 +122,7 @@ export default {
 #post_box{
     padding:5px;
 }
-.input_form {
+.title_form {
     margin-top: 5px;
     width: 98%;
     height: 30px;
@@ -130,5 +148,15 @@ export default {
     max-width:300px;
     margin-top:20px;
     width:60%;
+}
+.minus_btn {
+    font-size: 20px;
+    float:left;
+    margin-left:11px;
+}
+.input_form {
+    width: 80%;
+    height: 30px;
+    margin-left:5px;
 }
 </style>

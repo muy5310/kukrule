@@ -4,7 +4,11 @@ export default [{
         date: '2021.02.21',
         img: 'https://cdn.pixabay.com/photo/2014/12/10/05/50/english-bulldog-562723_960_720.jpg',
         caption: '난 개인적으로 불독 귀여운지 모르겠는데 이 사진 귀엽다 생각하는 사람?',
-        items: ['hi', 'hh', '']
+        items: ['귀엽다', '뭐가 귀여운지 모르겠다', '그냥 아무생각 없음'],
+        liked: false,
+        postlike: 95,
+        moreClick: false,
+        viewmore: true
     },
     {
         title: '사진 분위기 ',
@@ -12,6 +16,10 @@ export default [{
         date: '2021.02.19',
         img: 'https://cdn.pixabay.com/photo/2019/07/29/06/01/holiday-4369987_960_720.jpg',
         caption: '이 사진땜에 친구랑 싸우는 중인데 저 사진 그냥 여유로워 보이고 아름다운 느낌 아닌가? 쓸쓸해 보이고 슬퍼 보인다 생각하는 사람도 있어? 투표 ㄱㄱㄱ',
-        items: ['gg', 'kk', 'z']
+        items: ['쓸쓸함', '아름다움'],
+        liked: false,
+        postlike: 42,
+        moreClick: false,
+        viewmore: true
     }
 ];

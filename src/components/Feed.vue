@@ -21,18 +21,18 @@
 				<br>
 				<img class="imgSize" v-if="imgShown" v-bind:src="postData.img">
 				</p>
-				<button class="body_detail cursorPoint" v-show="moreShown" v-if="viewmore" v-on:click="[moreClick=true, viewControl()]">...자세히 보기</button>
-				<!-- 닫기 버튼 <button class="body_detail cursorPoint" v-if="viewmore" v-on:click="moreClick">닫기</button> -->
+				<button class="body_detail cursorPoint" v-show="moreShown" v-if="postData.viewmore" v-on:click="[postData.moreClick=true, viewControl()]">...자세히 보기</button>
+				<!-- 닫기 버튼 <button class="body_detail cursorPoint" v-if="postData.viewmore" v-on:click="postData.moreClick">닫기</button> -->
 			</div>
-			<SurveyLine></SurveyLine>
+			<SurveyItem v-for="(item, i) in postData.items" v-bind:itemList="item" v-bind:key="i"></SurveyItem>
 			<div class="contents_vote">
 				<span class="vote_num">2.8</span>
 				<span>명 투표</span>
 				<span class="vote_detail">
 					<span>
-						<i class="far fa-heart btnPoint" v-if="liked" v-on:click="onClickBtn"></i>
+						<i class="far fa-heart btnPoint" v-if="!postData.liked" v-on:click="onClickBtn"></i>
 						<i class="fas fa-heart cursorPoint heartPoint" v-else v-on:click="cancelClick"></i>
-                        <label class="like_num">{{postlike}}</label>
+                        <label class="like_num">{{postData.postlike}}</label>
 					</span>					
                     <span class="share_btn btnPoint">
 						<i class="fas fa-share-alt"></i>
@@ -52,9 +52,9 @@
 
 <script>
 import Comment from './Comment.vue';
-import SurveyLine from './SurveyLine.vue';
 import ModalView from './ModalView.vue';
 import PostModal from './modals/PostModal.vue';
+import SurveyItem from './SurveyItem.vue';
 
 export default {
 	name:'post',
@@ -63,25 +63,21 @@ export default {
 	},
     components:{
         Comment,
-		SurveyLine,
+		SurveyItem,
 		ModalView,
         PostModal
 	},
 	data:function(){
 		return{
-			liked:true,
-			postlike:95,
-			viewmore:true,
 			isModalViewed: false,
 			imageAttach: true,
 			imgShown: false,
-			moreShown: false,
-			moreClick:false
+			moreShown: false
         }
 	},
 	computed: {
 		desDetail: function() {
-			return this.moreClick? null : 'desHidden';
+			return this.postData.moreClick? null : 'desHidden';
 		}
 	},
 	methods:{
@@ -89,16 +85,16 @@ export default {
 			this.$emit('commentPage')
 		},
 		onClickBtn: function() {
-			this.liked = !this.liked;
-			this.postlike += 1;
+			this.postData.liked = !this.postData.liked;
+			this.postData.postlike += 1;
 		},
 		cancelClick: function(){
-			this.liked = !this.liked;
-			this.postlike -= 1;
+			this.postData.liked = !this.postData.liked;
+			this.postData.postlike -= 1;
 		},
 		viewControl: function(){
 			console.log('hi');
-			this.viewmore = false;
+			this.postData.viewmore = false;
 			this.moreShown = false;
 		},
 		imgRender: function() {
@@ -125,6 +121,7 @@ export default {
 			this.isModalViewed = false;
 			this.imgRender();
 			this.letterNum();
+			
 		}
 	},
 	beforeMount(){
@@ -248,7 +245,7 @@ export default {
 		/* text-align: center; */
 	}
 	.imgSize{
-		margin: 20px 0 0 0;
-		width:70%;
+		margin: 20px 2% 0 2%;
+		width:94%;
 	}
 </style>
