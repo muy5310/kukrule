@@ -16,11 +16,13 @@
 					<span class="head_name">{{postData.author}}</span>
 				</div>
 			</div><br>
-			<div class="content_body">{{postData.caption}}
-				<button class="body_detail cursorPoint" v-show="moreShown" v-if="viewmore" v-on:click="moreClick">...자세히 보기</button>
-				<p class="imgBox" v-else><img class="imgSize" v-if="imgShown" v-bind:src="postData.img"></p>
-				<!-- 닫기 버튼 <button class="body_detail cursorPoint" v-if="viewmore" v-on:click="moreClick">닫기</button> -->
+			<div class="content_body">
+				<p v-bind:class="desDetail">{{postData.caption}}
 				<br>
+				<img class="imgSize" v-if="imgShown" v-bind:src="postData.img">
+				</p>
+				<button class="body_detail cursorPoint" v-show="moreShown" v-if="viewmore" v-on:click="[moreClick=true, viewControl()]">...자세히 보기</button>
+				<!-- 닫기 버튼 <button class="body_detail cursorPoint" v-if="viewmore" v-on:click="moreClick">닫기</button> -->
 			</div>
 			<SurveyLine></SurveyLine>
 			<div class="contents_vote">
@@ -73,8 +75,14 @@ export default {
 			isModalViewed: false,
 			imageAttach: true,
 			imgShown: false,
-			moreShown: false
+			moreShown: false,
+			moreClick:false
         }
+	},
+	computed: {
+		desDetail: function() {
+			return this.moreClick? null : 'desHidden';
+		}
 	},
 	methods:{
 		moveComment: function(){
@@ -88,8 +96,10 @@ export default {
 			this.liked = !this.liked;
 			this.postlike -= 1;
 		},
-		moreClick: function(){
-			this.viewmore = !this.viewmore;
+		viewControl: function(){
+			console.log('hi');
+			this.viewmore = false;
+			this.moreShown = false;
 		},
 		imgRender: function() {
 			if(this.postData.img != 'none'){
@@ -102,12 +112,17 @@ export default {
 			}
 		},
 		deleteRe: function() {
-			this.$emit('deleteDo');
+			var answer = confirm('삭제하시겠습니까?');
+			if(answer == true){
+				this.$emit('deleteDo');
 			setTimeout(this.dataCheck, 300);
+			}
+			else{
+				this.isModalViewed = false;
+			}
 		},
 		dataCheck: function(){
 			this.isModalViewed = false;
-			console.log('jo')
 			this.imgRender();
 			this.letterNum();
 		}
@@ -146,6 +161,11 @@ export default {
 	.image_btn:hover{
 		opacity: 0.6;
 	}
+	.desHidden{
+		height: 21px;
+		width: 70%;
+		overflow: hidden;
+	}
 	.more_btn{
 		float:right;
 		margin-top:5px;
@@ -176,6 +196,7 @@ export default {
 		background:0;
 		border:0;
 		color:gray;
+		margin-top:-37px;
 		float: right;
 	}
 	.body_item {
@@ -201,7 +222,6 @@ export default {
 	.vote_detail {
 		float:right;
 	}
-		
 	.comment_detail{
 		float:right;
 		background:0;
