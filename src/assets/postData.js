@@ -8,7 +8,9 @@ export default [{
         liked: false,
         postlike: 95,
         moreClick: false,
-        viewmore: true
+        moreShown: true,
+        viewmore: true,
+        imgShown: true
     },
     {
         title: '사진 분위기 ',
@@ -20,6 +22,8 @@ export default [{
         liked: false,
         postlike: 42,
         moreClick: false,
-        viewmore: true
+        moreShown: true,
+        viewmore: true,
+        imgShown: true,
     }
 ];

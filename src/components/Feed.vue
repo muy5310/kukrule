@@ -7,7 +7,7 @@
 				<ModalView v-if="isModalViewed" @close-modal="isModalViewed = false" >
 					<PostModal v-on:deleteSubmit="deleteRe"></PostModal>
 				</ModalView>
-			<span class="image_btn" v-if="imgShown">
+			<span class="image_btn" v-if="postData.imgShown">
 				<i class="far fa-file-image"></i>
 			</span> 
 				<div class="middle_line">	
@@ -19,9 +19,9 @@
 			<div class="content_body">
 				<p v-bind:class="desDetail">{{postData.caption}}
 				<br>
-				<img class="imgSize" v-if="imgShown" v-bind:src="postData.img">
+				<img class="imgSize" v-if="postData.imgShown" v-bind:src="postData.img">
 				</p>
-				<button class="body_detail cursorPoint" v-show="moreShown" v-if="postData.viewmore" v-on:click="[postData.moreClick=true, viewControl()]">...자세히 보기</button>
+				<button class="body_detail cursorPoint" v-show="postData.moreShown" v-if="postData.viewmore" v-on:click="[postData.moreClick=true, viewControl()]">...자세히 보기</button>
 				<!-- 닫기 버튼 <button class="body_detail cursorPoint" v-if="postData.viewmore" v-on:click="postData.moreClick">닫기</button> -->
 			</div>
 			<SurveyItem v-for="(item, i) in postData.items" v-bind:itemList="item" v-bind:key="i"></SurveyItem>
@@ -69,10 +69,7 @@ export default {
 	},
 	data:function(){
 		return{
-			isModalViewed: false,
-			imageAttach: true,
-			imgShown: false,
-			moreShown: false
+			isModalViewed: false
         }
 	},
 	computed: {
@@ -93,20 +90,25 @@ export default {
 			this.postData.postlike -= 1;
 		},
 		viewControl: function(){
-			console.log('hi');
 			this.postData.viewmore = false;
-			this.moreShown = false;
+			this.postData.moreShown = false;
 		},
-		imgRender: function() {
-			if(this.postData.img != 'none'){
-				this.imgShown = true;
-			}
-		},
-		letterNum: function() {
-			if(this.postData.caption.length > 150 || this.postData.img != 'none') {
-				this.moreShown = true;
-			}
-		},
+		// imgRender: function() {
+		// 	if(this.postData.img != 'none'){
+		// 		this.postData.imgShown = true;
+		// 	}
+		// 	else{
+		// 		this.postData.imgShown = false;
+		// 	}
+		// },
+		// letterNum: function() {
+		// 	if(this.postData.caption.length > 150 || this.postData.img != 'none') {
+		// 		this.postData.moreShown = true;
+		// 	}
+		// 	else{
+		// 		this.postData.moreShown = false;
+		// 	}
+		// },
 		deleteRe: function() {
 			var answer = confirm('삭제하시겠습니까?');
 			if(answer == true){
@@ -118,16 +120,13 @@ export default {
 			}
 		},
 		dataCheck: function(){
-			this.isModalViewed = false;
-			this.imgRender();
-			this.letterNum();
-			
+			this.isModalViewed = false;		
 		}
-	},
-	beforeMount(){
-		this.imgRender();
-		this.letterNum();
 	}
+	// beforeMount(){
+	// 	this.imgRender();
+	// 	this.letterNum();
+	// }
 }
 </script>
 

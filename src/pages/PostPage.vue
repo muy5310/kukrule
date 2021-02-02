@@ -43,21 +43,23 @@
 import TopHeader from '../components/TopHeader.vue';
 // import SurveyContent from '../components/SurveyContent.vue';
 import Option from '../components/Option.vue';
-import data from '../assets/postData.js';
+import postData from '../assets/postData.js';
 
 export default {
     data:function(){
         return{
             title:'새로운 국룰 만들기',
             icon:'완료',
-            postData :data,
+            postData : postData,
             newTitle: '',
             newCaption: '', 
             newImgSrc:'none',
             newItems:[],
             imgExist:false,
             postlike:0,
-            viewmore:false
+            viewmore:false,
+            moreShown:false,
+            imgShown:false
         }
     },
     components: {
@@ -76,11 +78,13 @@ export default {
             }
             this.imgExist = true;
             this.viewmore = true;
+            this.imgShown = true;
         },
         imgDelete: function(){
             this.imgExist = false;
             this.newImgSrc = 'none';
             this.viewmore = false;
+            this.imgShown = false;
         },
         backLink: function(){
             this.$router.go(-1);
@@ -92,7 +96,16 @@ export default {
             this.$router.push({path:'/'});
         },
         mainMove: function(){
+            if (this.newCaption.length > 15 || this.newImgSrc != 'none') {
+                this.moreShown = true;
+            }
             if(this.newTitle=='' || this.newCaption==''){
+                alert("모든 내용을 입력해주세요.");
+                // if (this.newItems.length < 2) {
+                //     alert("모든 내용을 입력해주세요.");
+                // }
+            }
+            else if (this.newItems.length < 2){
                 alert("모든 내용을 입력해주세요.");
             }
             else{
@@ -106,12 +119,14 @@ export default {
                 liked : false,
                 postlike : this.postlike,
                 moreClick : false,
-                viewmore: this.viewmore
+                viewmore: this.viewmore,
+                moreShown : this.moreShown,
+                imgShown : this.imgShown
             }
-            data.unshift(newData);
-            this.newTitle = '';
-            this.newCaption = '';
-            this.newImgSrc = 'none';
+            postData.unshift(newData);
+            // this.newTitle = '';
+            // this.newCaption = '';
+            // this.newImgSrc = 'none';
             setTimeout(this.mainLink, 1000);}
         }
     }
