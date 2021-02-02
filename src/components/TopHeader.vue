@@ -26,7 +26,6 @@ export default {
 		iconData: function(){
 			if(this.icondata == undefined){
 				this.hidden = false;
-				console.log(this.icondata);
 			}
 		}
 	},
