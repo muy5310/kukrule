@@ -77,13 +77,11 @@ export default {
                 this.newImgSrc = e.target.result;
             }
             this.imgExist = true;
-            this.viewmore = true;
             this.imgShown = true;
         },
         imgDelete: function(){
             this.imgExist = false;
             this.newImgSrc = 'none';
-            this.viewmore = false;
             this.imgShown = false;
         },
         backLink: function(){
@@ -97,6 +95,8 @@ export default {
         },
         mainMove: function(){
             if (this.newCaption.length > 15 || this.newImgSrc != 'none') {
+                console.log(this.newCaption.length);
+                this.viewmore = true;
                 this.moreShown = true;
             }
             if(this.newTitle=='' || this.newCaption==''){

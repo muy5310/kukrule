@@ -3,7 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import VueModal from 'vue-js-modal'
 
-import { IntroPage, MainPage, CommentPage, PostPage, EditPage, LoginPage, SignupPage, MyInfoPage, Test } from './pages';
+import { IntroPage, MainPage, CommentPage, PostPage, EditPage, LoginPage, SignupPage, MyInfoPage, Test, SharePage } from './pages';
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);
@@ -51,6 +51,10 @@ const router = new VueRouter({
         {
             path: '/myinfo',
             component: MyInfoPage
+        },
+        {
+            path: '/share',
+            component: SharePage
         },
         {
             path: '/test',

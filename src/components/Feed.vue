@@ -34,7 +34,7 @@
 						<i class="fas fa-heart cursorPoint heartPoint" v-else v-on:click="cancelClick"></i>
                         <label class="like_num">{{postData.postlike}}</label>
 					</span>					
-                    <span class="share_btn btnPoint">
+                    <span class="share_btn btnPoint" v-on:click="shareClick">
 						<i class="fas fa-share-alt"></i>
 					</span>
 				</span></div><br>
@@ -55,6 +55,7 @@ import Comment from './Comment.vue';
 import ModalView from './ModalView.vue';
 import PostModal from './modals/PostModal.vue';
 import SurveyItem from './SurveyItem.vue';
+import shareData from '../assets/shareData.js';
 
 export default {
 	name:'post',
@@ -69,7 +70,8 @@ export default {
 	},
 	data:function(){
 		return{
-			isModalViewed: false
+			isModalViewed: false,
+			shareData: shareData
         }
 	},
 	computed: {
@@ -121,6 +123,25 @@ export default {
 		},
 		dataCheck: function(){
 			this.isModalViewed = false;		
+		},
+		shareClick : function() {
+			var newShare = {
+				title:this.postData.title,
+                caption:this.postData.caption,
+                date:this.postData.date,
+                img : this.postData.img,
+                items : this.postData.items,
+                author:this.postData.author,
+                liked : this.postData.liked,
+                postlike : this.postData.postlike,
+                moreClick : this.postData.moreClick,
+                viewmore: this.postData.viewmore,
+                moreShown : this.postData.moreShown,
+                imgShown : this.postData.imgShown
+			}
+			shareData.unshift(newShare);
+			alert('URL이 복사되었습니다.');
+			this.$router.push({path:'/share'});
 		}
 	}
 	// beforeMount(){
