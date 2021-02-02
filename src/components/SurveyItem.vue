@@ -2,7 +2,8 @@
     <div class="box">
 		<button class="survey_item cursorPoint" v-if="select" v-on:click= "clickItem">{{ itemList }}</button>
         <button class="choice_item cursorPoint" v-else v-on:click= "clickItem">{{ itemList }}</button>
-	</div>
+        <span class="choice_percent" v-if="!select" v-on:click= "clickItem" >72%</span>
+    </div>
 </template>
 
 <script>
@@ -60,4 +61,8 @@ export default {
     /* background: linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%); */
     border-radius:3px;
 	}
+.choice_percent {
+    float:right;
+    margin:0.4% 1% 0 0;
+}
 </style>

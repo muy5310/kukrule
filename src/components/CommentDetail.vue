@@ -12,7 +12,7 @@
 			<label class="like_ctn">{{unlikeNum}}</label>
 		</span>
 		<span class="btn_margin btnPoint">
-			<i class="far fa-comment-dots"></i>
+			<i class="far fa-comment-dots" v-on:click="replyClick"></i>
 		</span>
 	</div>
 </template>
@@ -53,6 +53,9 @@ export default {
 			else{
 				this.unlikeNum-=1;
 			}
+		},
+		replyClick: function(){
+			this.$emit('replySubmit');
 		}
 	}
 }
