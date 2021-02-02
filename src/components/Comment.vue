@@ -6,15 +6,29 @@
         <span class="owner">계란찜</span>
         <span class="comment_date">01/06 18:21</span><br>
         <div class="comment_des">Shoes on, get up in the morn' Cup of milk, let's rock and roll King Kong, kick the drum</div>
-        <CommentDetail></CommentDetail>
+        <CommentDetail v-on:replySubmit="replyShow"></CommentDetail>
+        <ReplyBox v-if="replyShown"></ReplyBox>
     </div>
 </template>
+
 <script>
 import CommentDetail from './CommentDetail.vue';
+import ReplyBox from './ReplyBox.vue';
 
 export default {
     components:{
-        CommentDetail
+        CommentDetail,
+        ReplyBox
+    },
+    data:function(){
+        return{
+            replyShown:false
+        }
+    },
+    methods:{
+        replyShow: function(){
+            this.replyShown = !this.replyShown;
+        }
     }
 }
 </script>
