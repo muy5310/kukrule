@@ -38,7 +38,7 @@
 						<i class="fas fa-share-alt"></i>
 					</span>
 				</span></div><br>
-				
+			<div class = "feedComment" v-on:click="moveComment">	
 			<div class="comment" v-on:click="moveComment"> 
 				<span>
 					<i class="far fa-comment-dots"></i>
@@ -47,6 +47,7 @@
 				<span class="comment_num">608</span>
 			</div>
             <Comment></Comment>
+			</div>
 		</div>
 </template>
 
@@ -249,12 +250,12 @@ export default {
 		margin-top:10px;
 		margin-bottom:0px;
 		text-align:center;
-		cursor:pointer;
+		/* cursor:pointer; */
 	}
-	.comment:hover{
+	/* .comment:hover{
 		background: rgb(233, 233, 233);
 		opacity: 0.7;
-	}
+	} */
 	.comment_label{
 		margin:0 4px;
 		cursor: pointer;
@@ -267,5 +268,12 @@ export default {
 	.imgSize{
 		margin: 20px 2% 0 2%;
 		width:94%;
+	}
+	.feedComment{
+		cursor: pointer;
+	}
+	.feedComment:hover{
+		background: rgb(233, 233, 233);
+		opacity: 0.7;
 	}
 </style>
