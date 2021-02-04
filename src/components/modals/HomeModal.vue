@@ -1,7 +1,8 @@
 <template>
     <div class="modal-card shadow">
-    <button class="popBtn cursorPoint">핫국룰</button>
-    <button class="popBtn cursorPoint">최강 밸런스</button>
+    <!-- 잠시 주석 처리 -->
+    <!-- <button class="popBtn cursorPoint">핫!국룰</button>
+    <button class="popBtn cursorPoint">최강 밸런스</button> -->
     <button class="popBtn cursorPoint" v-on:click="myinfoMove">내 정보</button>
     <button class="popBtn cursorPoint">서비스 소개</button>
     </div>

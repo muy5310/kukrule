@@ -21,7 +21,7 @@
 				<br>
 				<img class="imgSize" v-if="postData.imgShown" v-bind:src="postData.img">
 				</p>
-				<button class="body_detail cursorPoint" v-show="postData.moreShown" v-if="postData.viewmore" v-on:click="[postData.moreClick=true, viewControl()]">...자세히 보기</button>
+				<button class="body_detail cursorPoint" v-show="postData.moreShown" v-if="postData.viewmore" v-on:click="[postData.moreClick=true, viewControl()]">...더 보기</button>
 				<!-- 닫기 버튼 <button class="body_detail cursorPoint" v-if="postData.viewmore" v-on:click="postData.moreClick">닫기</button> -->
 			</div>
 			<SurveyItem v-for="(item, i) in postData.items" v-bind:itemList="item" v-bind:key="i"></SurveyItem>
