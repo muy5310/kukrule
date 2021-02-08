@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueClipboard from 'vue-clipboard2'
 import VueRouter from 'vue-router'
 import VueModal from 'vue-js-modal'
 
@@ -8,6 +9,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueRouter);
 Vue.use(VueModal, { dynamic: true });
+Vue.use(VueClipboard);
 // const routes = [{
 //         path: '/',
 //         component: MainPage

@@ -144,6 +144,7 @@ export default {
                 imgShown : this.postData.imgShown
 			}
 			shareData.unshift(newShare);
+			this.$copyText('http://localhost:8080/#/share'); //서버 주소에 따라 url 바꿔줘야함.
 			alert('URL이 복사되었습니다.');
 			this.$router.push({path:'/share'});
 		}
