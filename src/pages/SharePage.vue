@@ -11,15 +11,7 @@
         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
             <CommentModal></CommentModal>
         </ModalView> 
-		<div class="comment_input">
-			<span class="comment_profile">
-                <i class="fas fa-user-circle"></i>
-            </span>
-            <input type="text" placeholder="댓글을 입력하세요.">
-            <span class="comment_btn btnPoint">
-                <i class="far fa-paper-plane"></i>
-            </span>
-        </div>
+		<CommentInput></CommentInput>
 	</div>
     <CommentLine></CommentLine>
     </div>
@@ -32,6 +24,8 @@ import shareData from '../assets/shareData.js';
 import ModalView from '../components/ModalView.vue';
 import CommentModal from '../components/modals/CommentModal.vue';
 import CommentLine from '../components/CommentLine.vue';
+import CommentInput from '../components/CommentInput.vue';
+
 
 export default {
     data: function(){
@@ -46,7 +40,8 @@ export default {
         ShareFeed,
         CommentLine,
         ModalView,
-        CommentModal
+        CommentModal,
+        CommentInput
     },
     methods:{
         backLink: function(){
