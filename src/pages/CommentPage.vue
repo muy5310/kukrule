@@ -9,16 +9,8 @@
 		</span>
         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
             <CommentModal></CommentModal>
-        </ModalView> 
-		<div class="comment_input">
-			<span class="comment_profile">
-                <i class="fas fa-user-circle"></i>
-            </span>
-            <input type="text" placeholder="댓글을 입력하세요.">
-            <span class="comment_btn btnPoint">
-                <i class="far fa-paper-plane"></i>
-            </span>
-        </div>
+        </ModalView>
+        <CommentInput></CommentInput>
 	</div>
     <CommentLine></CommentLine>
 </div>
@@ -26,20 +18,24 @@
 
 <script>
 import TopHeader from '../components/TopHeader.vue';
+import CommentInput from '../components/CommentInput.vue';
 import CommentLine from '../components/CommentLine.vue';
 import ModalView from '../components/ModalView.vue';
 import CommentModal from '../components/modals/CommentModal.vue';
+import commentData from '../assets/commentData.js';
 
 export default {
     data:function(){
         return{
             title:'(설문제목)',
-            isModalViewed: false
+            isModalViewed: false,
+            commentData : commentData
         }
     },
     components: {
         TopHeader,
         CommentLine,
+        CommentInput,
         ModalView,
         CommentModal
     },
@@ -68,19 +64,4 @@ export default {
 		height:40px;
 		padding:2px;
 	}
-	.comment_input > input{
-		background:none;
-		border:none;
-		height:40px;
-		width:77%;
-	}
-    .comment_btn{
-        float:right;
-        margin-top:8px;
-        margin-right:7px;
-    }
-    .comment_profile{
-        font-size:20px;
-        margin:3px;
-    }
 </style>

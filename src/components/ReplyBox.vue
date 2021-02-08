@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Reply></Reply>
     <div class="Rebox">
       ㄴ
 		<span class="profile">
@@ -14,18 +13,12 @@
 </template>
 
 <script>
-import Reply from './Reply.vue';
-
 export default {
-  components: {
-    Reply
-  }
 }
 </script>
 
 <style scoped>
     .Rebox{
-    margin-left:35%;
     color:gray;
     }
     .comment_box:active{

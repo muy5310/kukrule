@@ -46,7 +46,7 @@
 				<label class="comment_label">댓글</label>
 				<span class="comment_num">608</span>
 			</div>
-            <Comment></Comment>
+            <Comment v-bind:commentData="comment"></Comment>
 			</div>
 		</div>
 </template>
@@ -57,6 +57,7 @@ import ModalView from './ModalView.vue';
 import PostModal from './modals/PostModal.vue';
 import SurveyItem from './SurveyItem.vue';
 import shareData from '../assets/shareData.js';
+import commentData from '../assets/commentData.js';
 
 export default {
 	name:'post',
@@ -72,7 +73,9 @@ export default {
 	data:function(){
 		return{
 			isModalViewed: false,
-			shareData: shareData
+			shareData: shareData,
+			//항상 처음 입력된 댓글이 피드에 뜨도록
+			comment : commentData.slice(-1)[0]
         }
 	},
 	computed: {
