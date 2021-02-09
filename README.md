@@ -3,6 +3,9 @@
 ## Project setup
 ```
 npm install
+npm vue-router
+npm vue-js-modal
+npm vue-clipboard2
 ```
 
 ### Compiles and hot-reloads for development
