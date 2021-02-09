@@ -50,6 +50,7 @@ export default {
                 replyShown:false
             }
             commentData.unshift(newComment);
+            this.$emit('commentAdd');
             this.newDes='';
         }
     }

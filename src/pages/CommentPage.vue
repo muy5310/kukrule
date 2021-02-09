@@ -3,14 +3,14 @@
     <TopHeader v-bind:propsdata="title" v-on:backPage="backMove"></TopHeader>
     <div id="input_line">
 		<span>댓글</span>
-		<span class="comment_num">12</span>
+		<span class="comment_num">{{commentNum}}</span>
 		<span class="comment_setting btnPoint" @click="isModalViewed = true">
 			<i class="fas fa-sliders-h"></i>
 		</span>
         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
             <CommentModal></CommentModal>
         </ModalView>
-        <CommentInput></CommentInput>
+        <CommentInput v-on:commentAdd="addNum"></CommentInput>
 	</div>
     <CommentLine></CommentLine>
 </div>
@@ -29,7 +29,8 @@ export default {
         return{
             title:'(설문제목)',
             isModalViewed: false,
-            commentData : commentData
+            commentData:commentData,
+            commentNum : 2
         }
     },
     components: {
@@ -45,7 +46,13 @@ export default {
         },
         backMove: function(){
             setTimeout(this.backLink, 500);
+        },
+        addNum: function(){
+            this.commentNum += 1;
         }
+    },
+    beforeMount(){
+        this.commentNum = this.commentData.length;
     }
 }
 </script>
@@ -53,6 +60,7 @@ export default {
 <style scoped>
     .comment_num{
 		color:gray;
+        margin-left:1%;
 	}
 	.comment_setting {
 		float:right;

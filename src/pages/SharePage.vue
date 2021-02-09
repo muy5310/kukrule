@@ -4,14 +4,14 @@
         <ShareFeed v-for="(share, i) in shareData" v-bind:shareData="share" v-bind:key="i"></ShareFeed>
         <div id="input_line">
 		<span>댓글</span>
-		<span class="comment_num">12</span>
+		<span class="comment_num">{{commentNum}}</span>
 		<span class="comment_setting btnPoint" @click="isModalViewed = true">
 			<i class="fas fa-sliders-h"></i>
 		</span>
         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
             <CommentModal></CommentModal>
         </ModalView> 
-		<CommentInput></CommentInput>
+		<CommentInput v-on:commentAdd="addNum"></CommentInput>
 	</div>
     <CommentLine></CommentLine>
     </div>
@@ -25,14 +25,17 @@ import ModalView from '../components/ModalView.vue';
 import CommentModal from '../components/modals/CommentModal.vue';
 import CommentLine from '../components/CommentLine.vue';
 import CommentInput from '../components/CommentInput.vue';
+import commentData from '../assets/commentData.js';
 
 
 export default {
     data: function(){
         return{
             shareData : shareData,
+            commentData : commentData,
             title: 'hi',
-            isModalViewed:false
+            isModalViewed:false,
+            commentNum : 2
         }
     },
     components:{
@@ -50,10 +53,14 @@ export default {
         },
         backMove: function(){
             setTimeout(this.backLink, 500);
-        }
+        },
+        addNum: function(){
+            this.commentNum += 1;
+        },
     },
     beforeMount(){
         this.title = shareData[0].title;
+        this.commentNum = this.commentData.length;
     }
 }
 </script>
