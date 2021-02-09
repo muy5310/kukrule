@@ -44,7 +44,7 @@
 					<i class="far fa-comment-dots"></i>
 				</span>
 				<label class="comment_label">댓글</label>
-				<span class="comment_num">608</span>
+				<span class="comment_num">{{commentNum}}</span>
 			</div>
             <Comment v-bind:commentData="comment"></Comment>
 			</div>
@@ -75,7 +75,9 @@ export default {
 			isModalViewed: false,
 			shareData: shareData,
 			//항상 처음 입력된 댓글이 피드에 뜨도록
-			comment : commentData.slice(-1)[0]
+			comment : commentData.slice(-1)[0],
+			commentNum: 2,
+			commentData: commentData
         }
 	},
 	computed: {
@@ -147,8 +149,12 @@ export default {
 			this.$copyText('http://localhost:8080/#/share'); //서버 주소에 따라 url 바꿔줘야함.
 			alert('URL이 복사되었습니다.');
 			this.$router.push({path:'/share'});
-		}
-	}
+		}		
+	},
+    beforeMount(){
+        this.commentNum = this.commentData.length;
+    }
+	
 	// beforeMount(){
 	// 	this.imgRender();
 	// 	this.letterNum();
