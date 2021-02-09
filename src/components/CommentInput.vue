@@ -22,6 +22,10 @@ export default {
     },
     methods:{
         submitComment: function(){
+            if(this.newDes==''){
+                alert('내용을 입력해주세요')
+            }
+            else{
             var date = new Date();
             var month = date.getMonth() + 1;
             var day = date.getDate();
@@ -52,6 +56,7 @@ export default {
             commentData.unshift(newComment);
             this.$emit('commentAdd');
             this.newDes='';
+            }
         }
     }
 }

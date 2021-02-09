@@ -95,7 +95,6 @@ export default {
         },
         mainMove: function(){
             if (this.newCaption.length > 15 || this.newImgSrc != 'none') {
-                console.log(this.newCaption.length);
                 this.viewmore = true;
                 this.moreShown = true;
             }
