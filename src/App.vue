@@ -13,6 +13,8 @@ export default {
 /* 처음 큰 div */
 .app {
   width:100%;
+  max-width:480px;
+  margin: 0 auto 0 auto;
 }
 /* 박스 그림자 */
 .shadow {

@@ -7,10 +7,10 @@
                 <i class="fas fa-search"></i>
             </span>
 		</span>
-		<span class="top_func btnPoint" @click="isModalViewed = true">
+		<span class="top_func btnPoint postBtn" @click="isModalViewed = true">
             <i class="fas fa-ellipsis-h"></i> 
         </span>
-		<span class="top_func btnPoint" v-on:click="movePost">
+		<span class="top_func btnPoint " v-on:click="movePost">
             <i class="fas fa-plus"></i>
         </span>
         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
@@ -47,9 +47,10 @@ export default {
     .top_box {
         position: fixed;
         top:0;
-        left:0;
         padding:10px 3px;
-        width: 99%;
+        width: 100%;
+        max-width:470px;
+        margin: 0 auto 0 auto;
 		height: 40px;
 		text-align:center;
         background: white;
@@ -78,4 +79,7 @@ export default {
 		float:right;
 		margin:7px 1% 0 1%;
 	}
+    .postBtn{
+        margin-right:18px;
+    }
 </style>
