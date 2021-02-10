@@ -72,8 +72,10 @@ export default {
 
 <style scoped>
     .comment_box {
-        margin:10px;
-        margin-top:15px;
+        margin:10px 2%;
+        margin-top:10px;
+        /* border-bottom: solid 1px gray; */
+        /* ^댓글 구분선 */
         /* padding-top:10px; */
         /* padding-bottom: 10px; */
     }
@@ -92,6 +94,8 @@ export default {
     }
     .comment_date {
         color: gray;
+        float:right;
+        padding-top:5px;
     }
     .comment_des {
         height: auto;
