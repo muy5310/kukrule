@@ -1,5 +1,5 @@
 <template>
-    <div class="comment_box">
+    <div class="comment_box cursorPoint">
         <span class="profile">
             <i class="fas fa-user-circle"></i>
         </span>

@@ -172,6 +172,7 @@ export default {
 		border:none;
 		border-top:solid 2px gray;
 		margin-top:5px;
+		background: white;
 	}
 	.main_contents > div {
 		margin:2%
