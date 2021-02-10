@@ -14,6 +14,7 @@ export default {
 .app {
   width:100%;
   max-width:480px;
+  min-width:250px;
   margin: 0 auto 0 auto;
 }
 /* 박스 그림자 */

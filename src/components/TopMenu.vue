@@ -50,6 +50,7 @@ export default {
         padding:10px 3px;
         width: 100%;
         max-width:470px;
+        min-width:240px;
         margin: 0 auto 0 auto;
 		height: 40px;
 		text-align:center;
