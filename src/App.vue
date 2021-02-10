@@ -16,6 +16,9 @@ export default {
   max-width:480px;
   min-width:250px;
   margin: 0 auto 0 auto;
+  background: white;
+  height:100%;
+  min-height: 100vh;
 }
 /* 박스 그림자 */
 .shadow {

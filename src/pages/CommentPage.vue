@@ -1,7 +1,7 @@
 <template>
 <div class="app">
     <TopHeader v-bind:propsdata="title" v-on:backPage="backMove"></TopHeader>
-    <div id="input_line">
+    <div class="input_line">
 		<span>댓글</span>
 		<span class="comment_num">{{commentNum}}</span>
 		<span class="comment_setting btnPoint" @click="isModalViewed = true">
@@ -58,6 +58,9 @@ export default {
 </script>
 
 <style scoped>
+    .input_line{
+        margin: 0 1%;
+    }
     .comment_num{
 		color:gray;
         margin-left:1%;

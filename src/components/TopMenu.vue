@@ -1,5 +1,5 @@
 <template>
-    <div class="top_box shadow">
+    <div class="top_box">
         <img class="kukrule_logo cursorPoint" src='../image/kukrulelogo.png' />
 		<span class="top_search">
 			<input class="search_input" type="text" placeholder="검색">
@@ -47,14 +47,15 @@ export default {
     .top_box {
         position: fixed;
         top:0;
-        padding:10px 3px;
-        width: 100%;
-        max-width:470px;
-        min-width:240px;
+        padding:7px 3px;
+        width:100%;
+        max-width:474px;
+        min-width:250px;
         margin: 0 auto 0 auto;
 		height: 40px;
 		text-align:center;
         background: white;
+        box-shadow: 0 10px 10px -5px rgb(0, 0, 0, 0.1);
     }
         
     .top_box .kukrule_logo {

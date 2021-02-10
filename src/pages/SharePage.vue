@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="app">
         <TopHeader v-bind:propsdata="title" v-on:backPage="backMove"></TopHeader>
         <ShareFeed v-for="(share, i) in shareData" v-bind:shareData="share" v-bind:key="i"></ShareFeed>
-        <div id="input_line">
+        <div class="input_line">
 		<span>댓글</span>
 		<span class="comment_num">{{commentNum}}</span>
 		<span class="comment_setting btnPoint" @click="isModalViewed = true">
@@ -94,5 +94,7 @@ export default {
         font-size:20px;
         margin:3px;
     }
-
+    .input_line{
+        margin: 0 1%;
+    }
 </style>
