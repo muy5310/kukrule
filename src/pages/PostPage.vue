@@ -17,23 +17,18 @@
         </p>
         
     </div>
-     <div class="add_line">
-        <span class="minus_btn cursorPoint">
+     <div class="itemLine" v-for="(newItem, index) in newItems" v-bind:key="index">
+        <span class="minus_btn cursorPoint" v-on:click="removeAnswer(index)">
 			<i class="fas fa-minus-circle"></i>
 		</span>
-        <input v-model="newItems[0]" class="input_form" type="text" placeholder="항목" />
-    </div><br>
-    <div class="add_line">
-        <span class="minus_btn cursorPoint">
-			<i class="fas fa-minus-circle"></i>
+        <input v-model="newItems[index]" class="input_form" type="text" placeholder="항목" />
+    </div>
+    <button v-on:click="checkBtn">check</button>
+    <div class="itemAdd">
+        <span class="plus_btn">
+			<i class="fas fa-plus-circle cursorPoint"></i>
 		</span>
-        <input v-model="newItems[1]" class="input_form" type="text" placeholder="항목" />
-    </div><br>
-    <div class="add_line">
-        <span class="plus_btn cursorPoint">
-			<i class="fas fa-plus-circle"></i>
-		</span>
-        <button class="plus_txt">새 답변 추가</button>
+        <button class="plus_txt" v-on:click="addAnswer">새 답변 추가</button>
     </div><br>
     <Option></Option>
 </div>
@@ -54,7 +49,7 @@ export default {
             newTitle: '',
             newCaption: '', 
             newImgSrc:'none',
-            newItems:[],
+            newItems:["",""],
             imgExist:false,
             postlike:0,
             viewmore:false,
@@ -78,6 +73,26 @@ export default {
             }
             this.imgExist = true;
             this.imgShown = true;
+        },
+        addAnswer: function() {
+            if(this.newItems.length >= 12){
+                alert('항목은 최대 12개까지만 입력 가능합니다.');
+            }
+            else{
+                this.newItems.push("")
+            }
+        },
+        removeAnswer:function(index){
+            if(this.newItems.length < 3){
+                alert('항목은 두 가지 이상 입력해야 합니다.');
+            }
+            else{
+                this.newItems.splice(index, 1);
+            }
+            
+        },
+        checkBtn:function(){
+            console.log(this.newItems);
         },
         imgDelete: function(){
             this.imgExist = false;
@@ -104,7 +119,7 @@ export default {
                 //     alert("모든 내용을 입력해주세요.");
                 // }
             }
-            else if (this.newItems.length < 2){
+            else if (this.newItems.includes("")){
                 alert("모든 내용을 입력해주세요.");
             }
             else{
@@ -145,6 +160,13 @@ export default {
     margin: 17px 0;
     width: 99%;
     height: 90px;
+}
+.itemLine{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.addBtn{
+    
 }
 .imgIcon{
     margin-right:5px;
