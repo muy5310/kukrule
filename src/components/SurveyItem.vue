@@ -1,9 +1,8 @@
 <template>
-    <div class="box">
+    <div class="box" v-on:click= "clickItem">
 		<button class="survey_item" v-if="!select">{{ itemList }}</button>
         <button class="choice_item" v-else>{{ itemList }}</button>
         <span class="choice_percent" v-if="select" >72%</span>
-        <button class="itemStick" v-on:click= "clickItem"></button>
     </div>
 </template>
 
@@ -31,7 +30,7 @@ export default {
 
 <style scoped>
 .box{
-    position: relative;
+    /* position: relative; */
     width: 95%;
     height: 30px;
     border:none;
@@ -40,7 +39,12 @@ export default {
     margin-bottom:10px;
     cursor: pointer;
 }
+.box:hover{
+    /* background: rgb(233, 233, 233); */
+	opacity: 0.8;
+}
 .survey_item {
+    cursor: pointer;
 	width:100%;
 	text-align:left;
 	background:0;
@@ -51,6 +55,7 @@ export default {
     border-radius:3px;
 }
 .choice_item {
+    cursor: pointer;
 	width:70%;
 	text-align:left;
 	background:0;
@@ -65,20 +70,6 @@ export default {
     /* 파랑색 */
     /* background: linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%); */
     border-radius:3px;
-	}
-.itemStick{
-    width:100%;
-    height: 30px;
-    border:none;
-    position: absolute;
-    cursor:pointer;
-    opacity: 0;
-    top:0;
-    left:0;
-}
-.itemStick:hover{
-    /* background: rgb(233, 233, 233); */
-	opacity: 0.3;
 }
 .choice_percent {
     float:right;
