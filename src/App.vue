@@ -76,7 +76,7 @@ export default {
   font-weight: bold;
 }
 /* 항목 추가 버튼 */
-.add_line{
+.itemAdd{
   text-align: center;
 }
 .plus_btn {
@@ -85,6 +85,7 @@ export default {
   background: white;
   color:rgb(205, 41, 16);
   font-size: 20px;
+  cursor:pointer;
 }
 .plus_txt {
   width: 81%;
@@ -94,7 +95,6 @@ export default {
   border: none;
   font-size: 15px;
   margin-left:5px;
-  cursor:pointer;
 }
 .plus_txt:hover {
   background: rgb(233, 233, 233);
