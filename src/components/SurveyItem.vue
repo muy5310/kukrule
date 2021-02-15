@@ -1,8 +1,9 @@
 <template>
     <div class="box">
-		<button class="survey_item cursorPoint" v-if="select" v-on:click= "clickItem">{{ itemList }}</button>
-        <button class="choice_item cursorPoint" v-else v-on:click= "clickItem">{{ itemList }}</button>
-        <span class="choice_percent" v-if="!select" v-on:click= "clickItem" >72%</span>
+		<button class="survey_item" v-if="!select">{{ itemList }}</button>
+        <button class="choice_item" v-else>{{ itemList }}</button>
+        <span class="choice_percent" v-if="select" >72%</span>
+        <button class="itemStick" v-on:click= "clickItem"></button>
     </div>
 </template>
 
@@ -14,12 +15,15 @@ export default {
     },
     data:function(){
         return{
-            select:true
+            select:false
         }
     },
     methods:{
         clickItem: function(){
             this.select = !this.select;
+        },
+        clickTest:function(){
+            console.log('hi');
         }
     }
 }
@@ -27,6 +31,7 @@ export default {
 
 <style scoped>
 .box{
+    position: relative;
     width: 95%;
     height: 30px;
     border:none;
@@ -61,6 +66,20 @@ export default {
     /* background: linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%); */
     border-radius:3px;
 	}
+.itemStick{
+    width:100%;
+    height: 30px;
+    border:none;
+    position: absolute;
+    cursor:pointer;
+    opacity: 0;
+    top:0;
+    left:0;
+}
+.itemStick:hover{
+    /* background: rgb(233, 233, 233); */
+	opacity: 0.3;
+}
 .choice_percent {
     float:right;
     margin:0.4% 1% 0 0;

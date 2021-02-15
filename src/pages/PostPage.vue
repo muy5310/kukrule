@@ -23,7 +23,6 @@
 		</span>
         <input v-model="newItems[index]" class="input_form" type="text" placeholder="항목" />
     </div>
-    <button v-on:click="checkBtn">check</button>
     <div class="itemAdd">
         <span class="plus_btn">
 			<i class="fas fa-plus-circle cursorPoint"></i>
@@ -90,9 +89,6 @@ export default {
                 this.newItems.splice(index, 1);
             }
             
-        },
-        checkBtn:function(){
-            console.log(this.newItems);
         },
         imgDelete: function(){
             this.imgExist = false;
@@ -164,9 +160,6 @@ export default {
 .itemLine{
     margin-bottom: 10px;
     text-align: center;
-}
-.addBtn{
-    
 }
 .imgIcon{
     margin-right:5px;
