@@ -1,6 +1,6 @@
 <template>
     <div class="top_box">
-        <img class="kukrule_logo cursorPoint" src='../image/kukrulelogo.png' />
+        <img class="kukrule_logo cursorPoint" src='../image/kukrulelogo.png' v-on:click="scrollTop"/>
 		<span class="top_search">
 			<input class="search_input" type="text" placeholder="검색">
 			<span class="search_btn btnPoint">
@@ -36,6 +36,9 @@ export default {
     methods:{
         movePost: function(){
             this.$emit("postPage");
+        },
+        scrollTop: function(){
+            window.scrollTo(0,0);
         }
     },
     
