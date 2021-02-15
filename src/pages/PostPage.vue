@@ -17,7 +17,7 @@
         </p>
         
     </div>
-     <div class="itemLine" v-for="(newItem, index) in newItems" v-bind:key="index">
+    <div class="itemLine" v-for="(newItem, index) in newItems" v-bind:key="index">
         <span class="minus_btn cursorPoint" v-on:click="removeAnswer(index)">
 			<i class="fas fa-minus-circle"></i>
 		</span>

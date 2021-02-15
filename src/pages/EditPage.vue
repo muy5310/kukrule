@@ -3,7 +3,7 @@
     <TopHeader v-bind:propsdata="title" v-bind:icondata="icon" v-on:backPage="backMove"></TopHeader>
     <SurveyContent></SurveyContent>
     <ItemLine></ItemLine>
-    <div class="add_line">
+    <div class="itemAdd">
         <span class="plus_btn cursorPoint">
 			<i class="fas fa-plus-circle"></i>
 		</span>

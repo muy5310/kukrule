@@ -95,6 +95,7 @@ export default {
   border: none;
   font-size: 15px;
   margin-left:5px;
+  cursor: pointer;
 }
 .plus_txt:hover {
   background: rgb(233, 233, 233);
