@@ -5,9 +5,9 @@
 		<span class="profile">
       <i class="fas fa-user-circle"></i>
     </span>
-    <span class="owner">떡볶이</span>
-    <span class="comment_date">01/07 09:21</span><br>
-    <div class="comment_des">누구세요</div>
+    <span class="owner">레몬</span>
+    <span class="commentDate">01/07 09:21</span><br>
+    <div class="commentDes">ㅇㅈㅇㅈ</div>
 	</div>
   </div>
 </template>
@@ -19,10 +19,7 @@ export default {
 
 <style scoped>
     .Rebox{
-    color:gray;
-    }
-    .comment_box:active{
-        background: rgb(233, 233, 233);
+    color:rgb(100, 97, 97);
     }
     .profile {
         margin:3px;
@@ -34,10 +31,10 @@ export default {
         font-weight: bold;
         margin-right:4px;
     }
-    .comment_date {
+    .commentDate {
         color: gray;
     }
-    .comment_des {
+    .commentDes {
         height: auto;
         overflow: auto;
         margin:0 0 3px 5%;

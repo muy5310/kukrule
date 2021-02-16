@@ -1,10 +1,10 @@
 <template>
     <div>
-    <div class="add_line">
-        <span class="minus_btn cursorPoint">
+    <div class="itemLine">
+        <span class="deleteBtn cursorPoint">
 			<i class="fas fa-minus-circle"></i>
 		</span>
-        <input class="input_form" type="text" placeholder="항목" />
+        <input class="itemForm" type="text" placeholder="항목" />
     </div><br></div>
 </template>
 
@@ -14,15 +14,18 @@ export default {
 </script>
 
 <style scoped>
-    .minus_btn {
+.itemLine{
+    margin-bottom: 10px;
+    text-align: center;
+}
+    .deleteBtn {
         font-size: 20px;
         float:left;
         margin-left:11px;
     }
-    .input_form {
+    .itemForm {
         width: 80%;
         height: 30px;
         margin-left:5px;
     }
-    
 </style>

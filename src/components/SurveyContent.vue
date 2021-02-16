@@ -1,7 +1,7 @@
 <template>
-    <div id="post_box">
-        <input class="input_form" type="text" placeholder="제목" />
-		<textarea id="explain_form" type="text" placeholder="본문" ></textarea>
+    <div class="post-box">
+        <input class="titleForm" type="text" placeholder="제목" />
+		<textarea class="mainForm" type="text" placeholder="본문" ></textarea>
     </div>
 </template>
 
@@ -11,15 +11,15 @@ export default {
 </script>
 
 <style scoped>
-    #post_box{
+    .post-box{
         padding:5px;
     }
-    .input_form {
+    .titleForm {
         margin-top: 5px;
         width: 98%;
         height: 30px;
     }
-    #explain_form {
+    .mainForm {
         margin: 17px 0;
         width: 99%;
         height: 90px;

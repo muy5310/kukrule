@@ -1,5 +1,5 @@
 <template>
-    <div id="intro_container">
+    <div class="container">
         <p>당신의 결정이<br>곧 '룰'이 된다</p>
         <img src="../image/kukrulelogo.png" alt="kukrule_logo"><br>
     </div>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style scoped>
-    #intro_container {
+    .container {
         text-align: center;
         height: 100vh;
         width: 100%;
@@ -24,7 +24,7 @@ export default {
     }
 	
 	/* 밑에 요소들의 크기가 100%로 주었지만 작동이 의아하다 */
-    #intro_container>p {
+    .container>p {
 		margin:0 auto;
         font-size: 25px;
 		font-weight:bold;
@@ -36,7 +36,7 @@ export default {
         -webkit-text-fill-color: transparent;
 	}
         
-    #intro_container>img {
+    .container>img {
          margin-top: 3%;
     }
 </style>
