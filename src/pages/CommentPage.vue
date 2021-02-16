@@ -1,10 +1,10 @@
 <template>
 <div class="app">
     <TopHeader v-bind:propsdata="title" v-on:backPage="backMove"></TopHeader>
-    <div class="input_line">
+    <div class="midLine">
 		<span>댓글</span>
-		<span class="comment_num">{{commentNum}}</span>
-		<span class="comment_setting btnPoint" @click="isModalViewed = true">
+		<span class="commentNum">{{commentNum}}</span>
+		<span class="setting btnPoint" @click="isModalViewed = true">
 			<i class="fas fa-sliders-h"></i>
 		</span>
         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
@@ -58,21 +58,21 @@ export default {
 </script>
 
 <style scoped>
-    .input_line{
+    .midLine{
         margin: 0 1%;
     }
-    .comment_num{
+    .commentNum{
 		color:gray;
         margin-left:1%;
 	}
-	.comment_setting {
+	.setting {
 		float:right;
         padding-right:4px;
 	}
-	.comment_input{
+	/* .comment_input{
 		margin-top:10px;
 		border:solid 1px;
 		height:40px;
 		padding:2px;
-	}
+	} */
 </style>

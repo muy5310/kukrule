@@ -1,8 +1,8 @@
 <template>
     <div class="box" v-on:click= "clickItem">
-		<button class="survey_item" v-if="!select">{{ itemList }}</button>
-        <button class="choice_item" v-else>{{ itemList }}</button>
-        <span class="choice_percent" v-if="select" >72%</span>
+		<button class="surveyItem" v-if="!select">{{ itemList }}</button>
+        <button class="choiceItem" v-else>{{ itemList }}</button>
+        <span class="percent" v-if="select" >72%</span>
     </div>
 </template>
 
@@ -43,7 +43,7 @@ export default {
     /* background: rgb(233, 233, 233); */
 	opacity: 0.8;
 }
-.survey_item {
+.surveyItem {
     cursor: pointer;
 	width:100%;
 	text-align:left;
@@ -54,7 +54,7 @@ export default {
     /* background: linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%); */
     border-radius:3px;
 }
-.choice_item {
+.choiceItem {
     cursor: pointer;
 	width:70%;
 	text-align:left;
@@ -71,7 +71,7 @@ export default {
     /* background: linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%); */
     border-radius:3px;
 }
-.choice_percent {
+.percent {
     float:right;
     margin:0.4% 1% 0 0;
 }

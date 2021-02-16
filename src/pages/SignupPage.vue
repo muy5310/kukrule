@@ -1,32 +1,32 @@
 <template>
     <div class="app">
-        <div class="signup_top">
-            <span class="signup_back btnPoint" v-on:click="backMove">
+        <div class="top">
+            <span class="back btnPoint" v-on:click="backMove">
 				<i class="fas fa-arrow-left"></i>
 			</span>
         </div>
-        <div class="signup_text">
+        <div class="textLine">
             <h2>신규 회원가입</h2>
             <h4>국룰에 가입할 방법을 선택해 주세요</h4>
         </div>
-        <div class="signup_btn email_btn cursorPoint">
+        <div class="signBtn cursorPoint">
             <i class="far fa-envelope"></i>
             <label>이메일로 회원가입</label>
         </div>
-        <p class="signup_sns">SNS 회원가입</p>
-        <div class="signup_btn naver_btn borderNone cursorPoint">
+        <p class="divLine">SNS 회원가입</p>
+        <div class="signBtn naverBtn borderNone cursorPoint">
             <img src="../image/naverlogo.png" />
             <label>네이버로 쉬운 가입</label>
         </div>
-        <div class="signup_btn facebook_btn borderNone cursorPoint" v-on:click="Signupclick">
+        <div class="signBtn facebookBtn borderNone cursorPoint">
             <i class="fab fa-facebook-square"></i>
             <label>페이스북으로 쉬운 가입</label>
         </div>
-        <div class="signup_btn kakao_btn borderNone cursorPoint">
+        <div class="signBtn kakaoBtn borderNone cursorPoint">
             <i class="fas fa-comment"></i>
             <label>카카오로 쉬운 가입</label>
         </div>
-        <div class="signup_btn google_btn cursorPoint">
+        <div class="signBtn googleBtn cursorPoint">
             <img src="../image/googlelogo.png" />
             <label>구글로 쉬운 가입</label>
         </div>
@@ -37,11 +37,8 @@
 
 export default {
     methods:{
-        Signupclick:function(){
-            console.log('hi');
-        },
         backLink:function(){
-            this.$router.go(-1)
+            this.$router.go(-1);
         },
         backMove: function(){
             setTimeout(this.backLink, 500);
@@ -51,7 +48,7 @@ export default {
 </script>
 
 <style scoped>
-    .signup_top {
+    .top {
         width: 99%;
         display: inline-block;
         /* background: .968d8d; */
@@ -59,20 +56,20 @@ export default {
         text-align: center;
     }
         
-    .signup_back {
+    .back {
         float: left;
         margin: 1px 2% 0 2%;
     }
         
-    .signup_text {
+    .textLine {
         margin: auto 10px;
     }
         
-    .signup_text>h2 {
+    .textLine>h2 {
         margin-top: 0;
     }
         
-    .signup_btn {
+    .signBtn {
         border: solid 2px #C4C4C4;
         height: 35px;
         text-align: center;
@@ -82,20 +79,20 @@ export default {
         margin: 15px 10px;
     }
         
-    .signup_btn>i {
+    .signBtn>i {
         font-size: 20px;
         margin-left: 10px;
         float: left;
     }
         
-    .signup_btn>img {
+    .signBtn>img {
         width: 20px;
         height: 20px;
         float: left;
         margin-left: 10px;
     }
         
-    .signup_btn>label {
+    .signBtn>label {
         font-weight: bold;
         margin-left: -30px;
         cursor:pointer;
@@ -103,7 +100,7 @@ export default {
     .borderNone{
         border:none;
     }   
-    /* .naver_btn {
+    /* .naverBtn {
         background: #21C603;
         border-color: #21C603;
         color: white;
@@ -124,7 +121,7 @@ export default {
         color: #3B1C1C
     } */
 		
-    .signup_sns{
+    /* .snsText{
 		width:100%;
 		margin-top:70px;
         margin-bottom: 30px;
@@ -133,7 +130,7 @@ export default {
 		font-size:12px;
 		color: #999;
 	}
-	.signup_sns:after{
+	.snsText:after{
 		display:inline-block;
 		margin:0 0 3px 20px;
 		height:1px;
@@ -142,7 +139,7 @@ export default {
 		background-color: #999;
 		width:20%;
 	}
-	.signup_sns:before{
+	.snsText:before{
 		display:inline-block;
 		margin:0 20px 3px 0;
 		height:1px;
@@ -150,5 +147,5 @@ export default {
 		text-shadow:none;
 		background-color: #999;
 		width:20%;
-	}
+	} */
 </style>

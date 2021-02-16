@@ -1,10 +1,10 @@
 <template>
-    <div class="top_header shadow">
-        <span class="top_back btnPoint" v-on:click="moveBack">
+    <div class="topHeader shadow">
+        <span class="topBack btnPoint" v-on:click="moveBack">
 			<i class="fas fa-arrow-left"></i>
 		</span>
-		<label class="top_title">{{propsdata}}</label>
-		<label class="complete_btn shadow cursorPoint" v-if="hidden" v-on:click="moveMain">{{icondata}}</label>
+		<label class="topTitle">{{propsdata}}</label>
+		<label class="completeBtn shadow cursorPoint" v-if="hidden" v-on:click="moveMain">{{icondata}}</label>
     </div>
 </template>
 
@@ -37,10 +37,7 @@ export default {
 </script>
 
 <style scoped>
-	#input_line{
-		margin-top:10px;
-	}
-	.complete_btn {
+	.completeBtn {
         float: right;
 		border-radius: 5px;;
 		/* background: linear-gradient(to right, #656b8f, #8a79c4); */

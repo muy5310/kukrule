@@ -2,10 +2,10 @@
     <div class="app">
         <TopHeader v-bind:propsdata="title" v-on:backPage="backMove"></TopHeader>
         <ShareFeed v-for="(share, i) in shareData" v-bind:shareData="share" v-bind:key="i"></ShareFeed>
-        <div class="input_line">
+        <div class="midLine">
 		<span>댓글</span>
-		<span class="comment_num">{{commentNum}}</span>
-		<span class="comment_setting btnPoint" @click="isModalViewed = true">
+		<span class="commentNum">{{commentNum}}</span>
+		<span class="setting btnPoint" @click="isModalViewed = true">
 			<i class="fas fa-sliders-h"></i>
 		</span>
         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
@@ -66,35 +66,14 @@ export default {
 </script>
 
 <style scoped>
-.comment_num{
+.commentNum{
 		color:gray;
 	}
-	.comment_setting {
+	.setting {
 		float:right;
         padding-right:4px;
 	}
-	.comment_input{
-		margin-top:10px;
-		border:solid 1px;
-		height:40px;
-		padding:2px;
-	}
-	.comment_input > input{
-		background:none;
-		border:none;
-		height:40px;
-		width:77%;
-	}
-    .comment_btn{
-        float:right;
-        margin-top:8px;
-        margin-right:7px;
-    }
-    .comment_profile{
-        font-size:20px;
-        margin:3px;
-    }
-    .input_line{
+    .midLine{
         margin: 0 1%;
     }
 </style>

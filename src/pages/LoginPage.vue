@@ -1,32 +1,31 @@
 <template>
-<div id="login_container">
-        <p id="title">국룰(國rule)</p>
-        <div id="login_box">
-            <input class="login_input" type="text" placeholder="이메일주소 입력" id="userid"><br>
-            <input class="login_input" type="password" placeholder="비밀번호 입력" id="userpw"><br>
-            <button class="login_btn cursorPoint" type="submit" v-on:click="mainMove">로그인</button>
+<div class="container">
+        <p class="title">국룰(國rule)</p>
+        <div>
+            <input class="userInput" type="text" placeholder="이메일주소 입력" id="userid"><br>
+            <input class="userInput" type="password" placeholder="비밀번호 입력" id="userpw"><br>
+            <button class="loginBtn cursorPoint" type="submit" v-on:click="mainMove">로그인</button>
         </div>
-        <div id="box_bottom">
+        <div>
             <AutoLogin></AutoLogin>
-            <span class="bottom_btn">
-				<a class="login_achtext" href="">비밀번호 찾기</a>
-				<a class="login_achtext" href="">아이디 찾기</a>
+            <span>
+				<a class="findInfo" href="">비밀번호 찾기</a>
+				<a class="findInfo" href="">아이디 찾기</a>
 			</span>
         </div><br>
 	
-		<p class="login_sns">
+		<p class="divLine">
 			SNS로그인
 		</p>
-		<!-- 다 비공식 로고 -->
         <div id="sns_box"> 
-            <button type="button" class="snsbtn naver_btn cursorPoint"><img class="logo_size" src="../image/naverlogo.png"/> </button>
-            <button type="button" class="snsbtn facebook_btn cursorPoint"><i class="fab fa-facebook-f"></i></button> 
-            <button type="button" class="snsbtn kakao_btn cursorPoint"><i class="fas fa-comment"></i></button> 
-            <button type="button" class="snsbtn google_btn cursorPoint"><img class="logo_size" src="../image/googlelogo.png"/></button> 
+            <button type="button" class="snsbtn naverBtn cursorPoint"><img src="../image/naverlogo.png"/> </button>
+            <button type="button" class="snsbtn facebookBtn cursorPoint"><i class="fab fa-facebook-f"></i></button> 
+            <button type="button" class="snsbtn kakaoBtn cursorPoint"><i class="fas fa-comment"></i></button> 
+            <button type="button" class="snsbtn googleBtn cursorPoint"><img src="../image/googlelogo.png"/></button> 
         </div>
-        <div id="login_bottom">
-            <a class="bottom_text" href="./#/signup">회원가입</a>
-            <a class="bottom_text" href="">고객센터</a>
+        <div>
+            <a class="bottomBtn" href="./#/signup">회원가입</a>
+            <a class="bottomBtn" href="">고객센터</a>
         </div>
     </div>
 
@@ -51,21 +50,21 @@ export default {
 </script>
 
 <style scoped>
-    #login_container {
+    .container {
         text-align: center;
         width: 100%;
         height: 100%;
         background-color: #E7F0FF;
         padding-bottom: 5%;
     }
-    #title {
+    .title {
         padding: 10%;
         font-size: 30px;
 		font-weight:bold;
         margin-top:0;
         padding-top: 17%;
     }
-    .login_input {
+    .userInput {
         background: #FFFFFF;
         border: 1px solid #DBD8D8;
         border-radius: 5px;
@@ -75,7 +74,7 @@ export default {
         margin: 1%;
     }
         
-    .login_btn {
+    .loginBtn {
 		margin:1%;
         background: linear-gradient(to right, #6478FB, #8763FB);
         color: white;
@@ -85,17 +84,17 @@ export default {
         height: 40px;
         font-weight: bold;
     }
-    .login_achtext {
+    .findInfo {
         float: right;
         font-size: 12px;
         text-decoration: none;
         color: #464646;
         margin: 0 2% 0 0;
     }
-    .login_achtext:hover{
+    .findInfo:hover{
         text-decoration: underline;
     }
-    .login_sns{
+    /* .login_sns{
 		width:100%;
 		margin-top:100px;
 		padding:0;
@@ -120,7 +119,7 @@ export default {
 		text-shadow:none;
 		background-color: #999;
 		width:20%;
-	}
+	} */
     #sns_box{
         padding-top:0px;
         margin:20px 0;
@@ -139,19 +138,19 @@ export default {
     .snsbtn>img {
         width: 17px;
     }
-    .google_btn{
+    .googleBtn{
         background: white;
         border-color: white;
         color:white;
     }
-    .bottom_text {
+    .bottomBtn {
         /* text-align: right; */
         font-size: 12px;
         text-decoration: none;
         color: #464646;
         margin: 0 0 0 4%;
     }
-    .bottom_text:hover{
+    .bottomBtn:hover{
         text-decoration: underline;
     }
 </style>

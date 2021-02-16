@@ -15,7 +15,8 @@ export default {
   width:100%;
   max-width:480px;
   min-width:250px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 0px auto;
+  padding-bottom: 10px;
   background: white;
   height:100%;
   min-height: 100vh;
@@ -24,7 +25,7 @@ export default {
 .shadow {
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.1);
 }
-.center_set{
+.centerSet{
   text-align: center;
 }
 /* 커서 모양 포인터로 변경  & 투명도 설정*/
@@ -61,17 +62,17 @@ export default {
 } */
 
 /* 상단바 */
-.top_header{
+.topHeader{
 	text-align: center;
   color:white;
 	padding:13px;
 	background: linear-gradient(to right, #fbcac9, #8ca6ce);
   margin-bottom: 10px;
 }
-.top_back{
+.topBack{
 	float:left;
 }
-.top_title{
+.topTitle{
   text-align: center;
   font-weight: bold;
 }
@@ -79,7 +80,7 @@ export default {
 .itemAdd{
   text-align: center;
 }
-.plus_btn {
+.addBtn {
   float:left;
   margin-left:10px;
   background: white;
@@ -87,7 +88,7 @@ export default {
   font-size: 20px;
   cursor:pointer;
 }
-.plus_txt {
+.addText {
   width: 81%;
   height: 30px;
   color: rgb(205, 41, 16);
@@ -97,26 +98,54 @@ export default {
   margin-left:5px;
   cursor: pointer;
 }
-.plus_txt:hover {
+.addText:hover {
   background: rgb(233, 233, 233);
 	opacity: 0.7;
 }
+/* 구분 선  */
+.divLine{
+	width:100%;
+	margin-top:70px;
+  margin-bottom: 40px;
+	padding:0;
+	text-align:center;
+	font-size:12px;
+	color: #999;
+}
+.divLine:after{
+	display:inline-block;
+	margin:0 0 3px 20px;
+	height:1px;
+	content:" ";
+	text-shadow:none;
+	background-color: #999;
+	width:20%;
+}
+.divLine:before{
+	display:inline-block;
+	margin:0 20px 3px 0;
+	height:1px;
+	content:" ";
+	text-shadow:none;
+	background-color: #999;
+	width:20%;
+}
 /* SNS 아이콘  */
-.naver_btn {
+.naverBtn {
   background: #21C603;
   border:none;
   color: white;
 }
-.facebook_btn {
+.facebookBtn {
   background: #3A589E;
   border-color: #3A589E;
   color: white;
 }
-.kakao_btn {
+.kakaoBtn {
   background: #F9E000;
   border-color: #F9E000;
 }
-.kakao_btn>i {
+.kakaoBtn>i {
   color: #3B1C1C
 }
 </style>

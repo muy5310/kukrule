@@ -1,10 +1,10 @@
 <template>
-<div class="comment_input">
-    <span class="comment_profile">
+<div class="commentInput">
+    <span class="profile">
         <i class="fas fa-user-circle"></i>
     </span>
     <input type="text" placeholder="댓글을 입력하세요." v-model="newDes">
-        <span class="comment_btn btnPoint" v-on:click="submitComment">
+        <span class="commentBtn btnPoint" v-on:click="submitComment">
             <i class="far fa-paper-plane"></i>
         </span>
 </div>
@@ -63,18 +63,24 @@ export default {
 </script>
 
 <style scoped>
-.comment_input > input{
+.commentInput{
+		margin-top:10px;
+		border:solid 1px;
+		height:40px;
+		padding:2px;
+	}
+.commentInput > input{
 		background:none;
 		border:none;
 		height:40px;
 		width:77%;
 	}
-    .comment_btn{
+    .commentBtn{
         float:right;
         margin-top:8px;
         margin-right:7px;
     }
-    .comment_profile{
+    .profile{
         font-size:20px;
         margin:3px;
     }

@@ -4,10 +4,10 @@
     <SurveyContent></SurveyContent>
     <ItemLine></ItemLine>
     <div class="itemAdd">
-        <span class="plus_btn cursorPoint">
+        <span class="addBtn cursorPoint">
 			<i class="fas fa-plus-circle"></i>
 		</span>
-        <button class="plus_txt">새 답변 추가</button>
+        <button class="addText">새 답변 추가</button>
     </div><br>
     <Option></Option>
 </div>

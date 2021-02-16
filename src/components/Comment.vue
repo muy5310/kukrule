@@ -1,23 +1,23 @@
 <template>
-    <div class="comment_box cursorPoint">
+    <div class="commentBox cursorPoint">
         <span class="profile">
             <i class="fas fa-user-circle"></i>
         </span>
         <span class="owner">{{commentData.owner}}</span>
-        <span class="comment_date">{{commentData.date}}</span><br>
-        <div class="comment_des">{{commentData.des}}</div>
-        <div class="comment_detail">	
-            <span class="btn_margin likeBox">
+        <span class="commentDate">{{commentData.date}}</span><br>
+        <div class="commentDes">{{commentData.des}}</div>
+        <div class="commentDetail">	
+            <span class="marginSet likeBox">
                 <i class="far fa-thumbs-up btnPoint " v-if="!commentData.like" v-on:click="clickUp"></i>
                 <i class="fas fa-thumbs-up cursorPoint upPoint" v-else v-on:click="clickUp"></i>
-                <label class="like_ctn">{{commentData.likeNum}}</label>
+                <label class="likeCnt">{{commentData.likeNum}}</label>
                 </span>
-            <span class="btn_margin">
+            <span class="marginSet">
                 <i class="far fa-thumbs-down btnPoint"  v-if="!commentData.unlike" v-on:click="clickDown"></i>
                 <i class="fas fa-thumbs-down cursorPoint downPoint" v-else v-on:click="clickDown"></i>
-                <label class="like_ctn">{{commentData.unlikeNum}}</label>
+                <label class="likeCnt">{{commentData.unlikeNum}}</label>
                 </span>
-            <span class="btn_margin btnPoint" v-on:click="replyClick">
+            <span class="marginSet btnPoint" v-on:click="replyClick">
                 <i class="far fa-comment-dots"></i>
             </span>
         </div>
@@ -71,7 +71,7 @@ export default {
 </script>
 
 <style scoped>
-    .comment_box {
+    .commentBox {
         margin:10px 2%;
         margin-top:10px;
         /* border-bottom: solid 1px gray; */
@@ -79,7 +79,7 @@ export default {
         /* padding-top:10px; */
         /* padding-bottom: 10px; */
     }
-    .comment_box:active{
+    .commentBox:active{
         background: rgb(233, 233, 233);
     }
     .profile {
@@ -92,25 +92,25 @@ export default {
         font-weight: bold;
         margin-right:4px;
     }
-    .comment_date {
+    .commentDate {
         color: gray;
         float:right;
         padding-top:5px;
     }
-    .comment_des {
+    .commentDes {
         height: auto;
         overflow: auto;
         margin-bottom:3px;
     }
-    .comment_detail {
+    .commentDetail {
         margin:10px 0;
 		/* float:right; */
 	}
 	
-    .btn_margin {
+    .marginSet {
         margin:0 5%;
     }
-	.like_ctn{
+	.likeCnt{
 		margin-left:3px;
 	}
 	.upPoint {

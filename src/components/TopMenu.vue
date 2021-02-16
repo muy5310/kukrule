@@ -1,16 +1,16 @@
 <template>
-    <div class="top_box">
-        <img class="kukrule_logo cursorPoint" src='../image/kukrulelogo.png' v-on:click="scrollTop"/>
-		<span class="top_search">
-			<input class="search_input" type="text" placeholder="검색">
-			<span class="search_btn btnPoint">
+    <div class="top-box">
+        <img class="kukruleLogo cursorPoint" src='../image/kukrulelogo.png' v-on:click="scrollTop"/>
+		<span class="search-box">
+			<input class="searchInput" type="text" placeholder="검색">
+			<span class="btnPoint">
                 <i class="fas fa-search"></i>
             </span>
 		</span>
-		<span class="top_func btnPoint postBtn" @click="isModalViewed = true">
+		<span class="rightSet btnPoint postBtn" @click="isModalViewed = true">
             <i class="fas fa-ellipsis-h"></i> 
         </span>
-		<span class="top_func btnPoint " v-on:click="movePost">
+		<span class="rightSet btnPoint " v-on:click="movePost">
             <i class="fas fa-plus"></i>
         </span>
         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-    .top_box {
+    .top-box {
         position: fixed;
         top:0;
         padding:7px 3px;
@@ -60,19 +60,18 @@ export default {
         background: white;
         box-shadow: 0 10px 10px -5px rgb(0, 0, 0, 0.1);
     }
-        
-    .top_box .kukrule_logo {
+    .kukruleLogo {
 		float:left;
         width:73px;
     }
 		
-    .top_box .top_search {
+    .search-box {
         background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
         border-radius: 7px;
         padding: 1%;
     }
         
-	.top_search .search_input{
+	.searchInput{
         background: none;
         border: none;
 		width:40%;
@@ -80,7 +79,7 @@ export default {
         height: 20px;
     }
     
-	.top_func{
+	.rightSet{
 		float:right;
 		margin:7px 1% 0 1%;
 	}

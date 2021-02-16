@@ -1,40 +1,40 @@
 <template>
     <div class="app">
-        <div class="top_header shadow">
-        <span class="top_back btnPoint" v-on:click="backMove">
+        <div class="topHeader shadow">
+        <span class="topBack btnPoint" v-on:click="backMove">
 			<i class="fas fa-times"></i>
 		</span>
-		<label class="top_title">내 정보</label>
-        <span class="my_complete btnPoint" v-on:click="backMove">
+		<label class="topTitle">내 정보</label>
+        <span class="complete btnPoint" v-on:click="backMove">
 			<i class="fas fa-check"></i>
 		</span></div>
-        <div class="myinfo_box">
-            <div class="myinfo_profile cursorPoint">
-                <img id="profile_icon" src="../image/profile.jpg">
+        <div class="infoBox">
+            <div class="myProfile cursorPoint">
+                <img class="profileImg" src="../image/profile.jpg">
                 <div>Nickname</div>
             </div>
-            <div class="mynum_box cursorPoint">
+            <div class="numBox cursorPoint">
                 <span class="mynum">5</span>
-                <label class="mynum_label cursorPoint">나의 설문</label>
+                <label class="numLabel cursorPoint">나의 설문</label>
             </div>
                 
-            <div class="mynum_box cursorPoint">
+            <div class="numBox cursorPoint">
                 <span class="mynum">32</span>
-                <label class="mynum_label cursorPoint">나의 선택</label>
+                <label class="numLabel cursorPoint">나의 선택</label>
             </div>
         </div>
-        <div class="center_set input_box">
+        <div class="centerSet inputBox">
             <label>ID</label>
-            <input class="myinfo_input" type="text">
-            <label id="pw_text">PW</label>
-            <input class="myinfo_input" type="password">
+            <input class="userInput" type="text">
+            <label class="pwLabel">PW</label>
+            <input class="userInput" type="password">
         </div>
 		<!-- <label class="complete_btn shadow">내 정보</label> -->
         
         <AutoLogin></AutoLogin><br>
-        <div id="mybtn_box">
-            <button class="my_btn my_survey shadow cursorPoint" type="button">나의 설문</button>
-            <button class="my_btn my_choice shadow cursorPoint" type="button">나의 선택</button>
+        <div class="mybtnBox">
+            <button class="mybtn mySurvey shadow cursorPoint" type="button">나의 설문</button>
+            <button class="mybtn myChoice shadow cursorPoint" type="button">나의 선택</button>
         </div>
         <TimeLine v-on:receiveEvent="commentMove"></TimeLine>
     </div>
@@ -67,29 +67,29 @@ export default {
 </script>
 
 <style scoped>
-	.my_complete {
+	.complete {
 		font-weight: bold;
 		color:white;
         float: right;
     }
-    .myinfo_box{
+    .infoBox{
         text-align: center;
         justify-content: center;
         display:flex;
         flex-direction: row;
     }
-    .myinfo_profile{
+    .myProfile{
         display:flex;
         flex-direction: column;
         width:30%;
         margin-right: 5%;
     }
-    #profile_icon{
+    .profileImg{
         width:100%;
         border-radius:50%;
         margin-bottom: 10px;
     }
-    .mynum_box{
+    .numBox{
         display:flex;
         flex-direction: column;
         margin:0 3%;
@@ -101,22 +101,22 @@ export default {
         font-weight: bold;
         margin-bottom: 10px;
     }
-    .input_box{
+    .inputBox{
         margin:20px 0;
     }
-    .myinfo_input{
+    .userInput{
         border:none;
         border-bottom: solid 1px gray;
         margin:0 5px;
         width:33%;
     }
-    #pw_text{
+    .pwLabel{
         margin-left:5%;
     }
-    #mybtn_box{
+    .mybtnBox{
         margin:20px 0;
     }
-    .my_btn{
+    .mybtn{
         width: 48%;
         margin:1%;
         height:53px;
@@ -125,10 +125,10 @@ export default {
         border:none;
         border-radius:2px;
     }
-    .my_survey{
+    .mySurvey{
         background: linear-gradient(120deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
     }
-    .my_choice{
+    .myChoice{
         background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
     }
 </style>

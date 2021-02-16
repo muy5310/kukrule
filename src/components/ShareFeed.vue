@@ -1,40 +1,40 @@
 <template>
-    <div class="main_contents">
-		<div class="content_head">
-            <span class="head_title">{{shareData.title}}</span>
+    <div class="main-contents">
+		<div>
+            <span class="title">{{shareData.title}}</span>
 
-			<button class="more_btn" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
+			<button class="setBtn" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
 				<ModalView v-if="isModalViewed" @close-modal="isModalViewed = false" >
 					<PostModal v-on:deleteSubmit="deleteRe"></PostModal>
 				</ModalView>
-			<span class="image_btn" v-if="shareData.imgShown">
+			<span class="imageIcon" v-if="shareData.imgShown">
 				<i class="far fa-file-image"></i>
 			</span> 
-				<div class="middle_line">	
+				<div class="middle-line">	
 					<!-- <span>카테고리</span>  -->
-					<span class="head_period">{{shareData.date}}</span>
-					<span class="head_name">{{shareData.author}}</span>
+					<span class="period">{{shareData.date}}</span>
+					<span class="poster">{{shareData.author}}</span>
 				</div>
 			</div><br>
-			<div class="content_body">
+			<div>
 				<p>{{shareData.caption}}
 				<br>
 				<img class="imgSize" v-if="shareData.imgShown" v-bind:src="shareData.img">
 				</p>
-				<!-- 자세히보기 버튼<button class="body_detail cursorPoint" v-show="shareData.moreShown" v-if="shareData.viewmore" v-on:click="[shareData.moreClick=true, viewControl()]">...자세히 보기</button> -->
-				<!-- 닫기 버튼 <button class="body_detail cursorPoint" v-if="shareData.viewmore" v-on:click="shareData.moreClick">닫기</button> -->
+				<!-- 더 보기 버튼<button class="moreBtn cursorPoint" v-show="shareData.moreShown" v-if="shareData.viewmore" v-on:click="[shareData.moreClick=true, viewControl()]">...자세히 보기</button> -->
+				<!-- 닫기 버튼 <button class="moreBtn cursorPoint" v-if="shareData.viewmore" v-on:click="shareData.moreClick">닫기</button> -->
 			</div>
 			<SurveyItem v-for="(item, i) in shareData.items" v-bind:itemList="item" v-bind:key="i"></SurveyItem>
-			<div class="contents_vote">
-				<span class="vote_num">2.8</span>
+			<div>
+				<span class="voteNum">2.8</span>
 				<span>명 투표</span>
-				<span class="vote_detail">
+				<span class="voteDetail">
 					<span>
 						<i class="far fa-heart btnPoint" v-if="!shareData.liked" v-on:click="onClickBtn"></i>
 						<i class="fas fa-heart cursorPoint heartPoint" v-else v-on:click="cancelClick"></i>
-                        <label class="like_num">{{shareData.postlike}}</label>
+                        <label class="likeNum">{{shareData.postlike}}</label>
 					</span>					
-                    <span class="post_btn btnPoint" v-on:click="shareClick">
+                    <span class="shareBtn btnPoint" v-on:click="shareClick">
 						<i class="fas fa-share-alt"></i>
 					</span>
 				</span></div><br>
@@ -74,7 +74,8 @@ export default {
 			this.shareData.postlike -= 1;
         },
 		deleteRe: function() {
-            confirm('삭제하시겠습니까?');
+            alert('이 페이지에선 삭제할 수 없습니다.');
+			this.isModalViewed = false;	
 			// var answer = confirm('삭제하시겠습니까?');
 			// if(answer == true){
 			// 	this.$emit('deleteDo');
@@ -100,25 +101,25 @@ export default {
 		background: none;
 		padding:none;
 	} */
-    .main_contents{
+    .main-contents{
 		border:none;
 		/* border-bottom:solid 2px gray; */
 		margin-top:5px;
 	}
-	.main_contents > div {
+	.main-contents > div {
 		margin:2%
 	}
-	.head_title{
+	.title{
 		font-size:23px;
 		font-weight: bold;
 		margin-bottom:5px;
 	}
-	.image_btn{
+	.imageIcon{
 		float:right;
 		margin-top:2px;
 		margin-right:3px;
 	}
-	.image_btn:hover{
+	.imageIcon:hover{
 		opacity: 0.6;
 	}
 	.desHidden{
@@ -126,7 +127,7 @@ export default {
 		width: 70%;
 		overflow: hidden;
 	}
-	.more_btn{
+	.setBtn{
 		float:right;
 		margin-top:5px;
 		background:none;
@@ -134,73 +135,50 @@ export default {
 		cursor: pointer;
 		border-radius:5px;
 	}
-	.more_btn:hover{
+	.setBtn:hover{
 		background: linear-gradient(to right, #fbcac9, #8ca6ce);
 		color:white;
 		/* background: linear-gradient(to right, #F86461, #669EF4);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent; */
 	}
-	.middle_line{
+	.middle-line{
 		margin-top:4px;
 	} 
-	.head_period{
+	.period{
 		float:left;
 		color:gray;
 	}
-	.head_name{
+	.poster{
 		float:right;
 		color:gray;
 	}
-	.body_detail{
+	/* .moreBtn{
 		background:0;
 		border:0;
 		color:gray;
 		margin-top:-37px;
 		float: right;
-	}
+	} */
 	.body_item {
 		width:100%;
 		text-align:left;
 		background:0;
 	}
-		/* .contents_vote *{
-			:0 0 0 1%;
-		} */
 	.heartPoint{
 		background: linear-gradient(to top, #ff3557 0%, #ff7e7e 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
-    .like_num{
+    .likeNum{
         margin-left:3px;
         margin-right:5px;
     }
-	.post_btn{
+	.shareBtn{
 		margin-right:5px;
 	}
-	.vote_detail {
+	.voteDetail {
 		float:right;
-	}
-	.comment_detail{
-		float:right;
-		background:0;
-		border:0;
-		color:gray;
-	}
-	.comment{
-		margin-top:10px;
-		margin-bottom:0px;
-		text-align:center;
-		cursor:pointer;
-	}
-	.comment:hover{
-		background: rgb(233, 233, 233);
-		opacity: 0.7;
-	}
-	.comment_label{
-		margin:0 4px;
-		cursor: pointer;
 	}
 	.imgBox{
 		margin:0;

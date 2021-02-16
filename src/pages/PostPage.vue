@@ -1,10 +1,10 @@
 <template>
 <div class="app">
     <TopHeader v-bind:propsdata="title" v-bind:icondata="icon" v-on:mainPage="mainMove" v-on:backPage="backMove"></TopHeader>
-    <div id="post_box">
-        <input v-model="newTitle" class="title_form" type="text" placeholder="제목" />
-		<textarea v-model="newCaption" id="explain_form" type="text" placeholder="본문" ></textarea>
-        <p class="imgAdd"><input type="file" id="file" class="inputfile" v-on:change="upload">
+    <div class="postBox">
+        <input v-model="newTitle" class="titleForm" type="text" placeholder="제목" />
+		<textarea v-model="newCaption" class="mainForm" type="text" placeholder="본문" ></textarea>
+        <p class="imgAdd"><input type="file" id="file" class="inputFile" v-on:change="upload">
             <label for="file" class="btnPoint">
                 <i class="far fa-images imgIcon"></i> 
                 <span v-if="!imgExist">이미지 추가하기 </span>
@@ -18,16 +18,16 @@
         
     </div>
     <div class="itemLine" v-for="(newItem, index) in newItems" v-bind:key="index">
-        <span class="minus_btn cursorPoint" v-on:click="removeAnswer(index)">
+        <span class="deleteBtn cursorPoint" v-on:click="removeAnswer(index)">
 			<i class="fas fa-minus-circle"></i>
 		</span>
-        <input v-model="newItems[index]" class="input_form" type="text" placeholder="항목" />
+        <input v-model="newItems[index]" class="itemForm" type="text" placeholder="항목" />
     </div>
     <div class="itemAdd">
-        <span class="plus_btn">
+        <span class="addBtn">
 			<i class="fas fa-plus-circle cursorPoint"></i>
 		</span>
-        <button class="plus_txt" v-on:click="addAnswer">새 답변 추가</button>
+        <button class="addText" v-on:click="addAnswer">새 답변 추가</button>
     </div><br>
     <Option></Option>
 </div>
@@ -144,15 +144,15 @@ export default {
 </script>
 
 <style scoped>
-#post_box{
+.postBox{
     padding:5px;
 }
-.title_form {
+.titleForm {
     margin-top: 5px;
     width: 98%;
     height: 30px;
 }
-#explain_form {
+.mainForm {
     margin: 17px 0;
     width: 99%;
     height: 90px;
@@ -168,7 +168,7 @@ export default {
     margin-top:0;
     text-align: center;
 }
-.inputfile{
+.inputFile{
     width:0px; 
     height: 0px; 
     overflow: hidden;
@@ -178,12 +178,12 @@ export default {
     margin-top:20px;
     width:60%;
 }
-.minus_btn {
+.deleteBtn {
     font-size: 20px;
     float:left;
     margin-left:11px;
 }
-.input_form {
+.itemForm {
     width: 80%;
     height: 30px;
     margin-left:5px;
