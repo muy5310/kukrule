@@ -42,7 +42,13 @@ export default {
         },
         backMove: function(){
             setTimeout(this.backLink, 500);
+        },
+        scrollTop: function(){
+            window.scrollTo(0,0);
         }
+    },
+    beforeMount(){
+        this.scrollTop();
     }
 }
 </script>
