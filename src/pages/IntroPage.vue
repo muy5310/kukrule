@@ -8,7 +8,14 @@
 
 <script>
 export default {
-
+    methods:{
+        scrollTop: function(){
+            window.scrollTo(0,0);
+        }
+    },
+    beforeMount(){
+        this.scrollTop();
+    }
 }
 </script>
 

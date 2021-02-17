@@ -61,7 +61,13 @@ export default {
         },
         commentMove: function(){
         setTimeout(this.commentLink, 500);
+        },
+        scrollTop: function(){
+            window.scrollTo(0,0);
         }
+    },
+    beforeMount(){
+        this.scrollTop();
     }
 }
 </script>
