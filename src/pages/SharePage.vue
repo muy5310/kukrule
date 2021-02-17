@@ -57,10 +57,14 @@ export default {
         addNum: function(){
             this.commentNum += 1;
         },
+        scrollTop: function(){
+            window.scrollTo(0,0);
+        }
     },
     beforeMount(){
         this.title = shareData[0].title;
         this.commentNum = this.commentData.length;
+        this.scrollTop();
     }
 }
 </script>

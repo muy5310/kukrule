@@ -138,8 +138,12 @@ export default {
             // this.newCaption = '';
             // this.newImgSrc = 'none';
             setTimeout(this.mainLink, 1000);}
+        },
+        scrollTop: function(){
+            window.scrollTo(0,0);
         }
-    }
+    },
+    beforeMount(){this.scrollTop();}
 }
 </script>
 

@@ -44,7 +44,13 @@ export default {
         },
         mainMove: function(){
             setTimeout(this.mainLink, 500);
+        },
+        scrollTop: function(){
+            window.scrollTo(0,0);
         }
+    },
+    beforeMount(){
+        this.scrollTop();
     }
 }
 </script>
@@ -53,9 +59,9 @@ export default {
     .container {
         text-align: center;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         background-color: #E7F0FF;
-        padding-bottom: 5%;
+        /* padding-bottom: 5%; */
     }
     .title {
         padding: 10%;
