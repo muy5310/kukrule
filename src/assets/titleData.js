@@ -1,1 +1,1 @@
-export default [];
+export default ['(설문제목)'];

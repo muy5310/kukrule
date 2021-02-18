@@ -101,6 +101,7 @@ export default {
         width: 93%;
         height: 40px;
         font-weight: bold;
+        font-size:15px;
     }
     .findInfo {
         float: right;
