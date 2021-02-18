@@ -11,7 +11,6 @@ export default [{
         postlike: 95,
         moreClick: false,
         moreShown: true,
-        viewmore: true,
         imgShown: true
     },
     {
@@ -22,9 +21,8 @@ export default [{
         items: ['1장', '2장', '3장 이상', '냅킨 통째로'],
         liked: false,
         postlike: 95,
-        moreClick: false,
-        moreShown: true,
-        viewmore: true,
+        moreClick: true,
+        moreShown: false,
         imgShown: false
     },
     {
@@ -35,9 +33,8 @@ export default [{
         items: ['3만', '5만', '10만', '안한다', '기타'],
         liked: false,
         postlike: 95,
-        moreClick: false,
-        moreShown: true,
-        viewmore: true,
+        moreClick: true,
+        moreShown: false,
         imgShown: false
     },
     {
@@ -48,22 +45,20 @@ export default [{
         items: ['먹는다', '안먹는다'],
         liked: false,
         postlike: 95,
-        moreClick: false,
-        moreShown: true,
-        viewmore: true,
+        moreClick: true,
+        moreShown: false,
         imgShown: false
     },
     {
         title: '소개팅 후 몇번 만에 고백?',
         author: '고백점프',
         date: '2021.02.21',
-        caption: '소개팅 해서 만난 애가 있는데 계속 만나기만 하고 얘기안하면 막 고백을 기다리고 그러냐?',
+        caption: '소개팅 해서 만난 애가 있는데 계속 만나기만 하고 얘기안하면 막 고백을 기다리고 그러냐,,?',
         items: ['소개팅 날', '소개팅 후 첫번째', '소개팅 후 두번째', '소개팅 후 세번째', '경우에 따라 다름', '기타'],
         liked: false,
         postlike: 95,
         moreClick: false,
         moreShown: true,
-        viewmore: true,
         imgShown: false
     }
 ];

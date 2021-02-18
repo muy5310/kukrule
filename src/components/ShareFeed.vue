@@ -116,7 +116,7 @@ export default {
 	}
 	.imageIcon{
 		float:right;
-		margin-top:2px;
+		margin-top:5px;
 		margin-right:3px;
 	}
 	.imageIcon:hover{
@@ -150,6 +150,7 @@ export default {
 		color:gray;
 	}
 	.poster{
+		margin-top:-2px;
 		float:right;
 		color:gray;
 	}

@@ -1,4 +1,5 @@
 <template>
+<div class="back-div">
     <div class="main-contents">
 		<div>
             <span class="title">{{postData.title}}</span>
@@ -21,16 +22,16 @@
 				<br>
 				<img class="imgSize" v-if="postData.imgShown" v-bind:src="postData.img">
 				</p>
-				<button class="moreBtn cursorPoint" v-show="postData.moreShown" v-if="postData.viewmore" v-on:click="[postData.moreClick=true, viewControl()]">...더 보기</button>
+				<button class="moreBtn cursorPoint nanumsquare" v-show="postData.moreShown" v-on:click="[postData.moreClick=true, viewControl()]">...더 보기</button>
 				<!-- 닫기 버튼 <button class="moreBtn cursorPoint" v-if="postData.viewmore" v-on:click="postData.moreClick">닫기</button> -->
 			</div>
 			<SurveyItem v-for="(item, i) in postData.items" v-bind:itemList="item" v-bind:key="i"></SurveyItem>
 			<div>
-				<span class="voteNum">2.8</span>
+				<span class="voteNum">2.8천</span>
 				<span>명 투표</span>
 				<span class="voteDetail">
-					<span>
-						<i class="far fa-heart btnPoint" v-if="!postData.liked" v-on:click="onClickBtn"></i>
+					<span> 
+						<i class="far fa-heart btnPoint heartIcon" v-if="!postData.liked" v-on:click="onClickBtn"></i>
 						<i class="fas fa-heart cursorPoint heartPoint" v-else v-on:click="cancelClick"></i>
                         <label class="likeNum">{{postData.postlike}}</label>
 					</span>					
@@ -49,6 +50,7 @@
             <Comment v-bind:commentData="comment"></Comment>
 			</div>
 		</div>
+</div>
 </template>
 
 <script>
@@ -57,6 +59,7 @@ import ModalView from './ModalView.vue';
 import PostModal from './modals/PostModal.vue';
 import SurveyItem from './SurveyItem.vue';
 import shareData from '../assets/shareData.js';
+import titleData from '../assets/titleData.js';
 import commentData from '../assets/commentData.js';
 
 export default {
@@ -74,6 +77,7 @@ export default {
 		return{
 			isModalViewed: false,
 			shareData: shareData,
+			titleData: titleData,
 			//항상 처음 입력된 댓글이 피드에 뜨도록
 			comment : commentData.slice(-1)[0],
 			commentNum: 2,
@@ -87,6 +91,8 @@ export default {
 	},
 	methods:{
 		moveComment: function(){
+			var newTitle = this.postData.title;
+			titleData.unshift(newTitle);
 			this.$emit('commentPage')
 		},
 		onClickBtn: function() {
@@ -98,7 +104,6 @@ export default {
 			this.postData.postlike -= 1;
 		},
 		viewControl: function(){
-			this.postData.viewmore = false;
 			this.postData.moreShown = false;
 		},
 		// imgRender: function() {
@@ -141,7 +146,6 @@ export default {
                 liked : this.postData.liked,
                 postlike : this.postData.postlike,
                 moreClick : this.postData.moreClick,
-                viewmore: this.postData.viewmore,
                 moreShown : this.postData.moreShown,
                 imgShown : this.postData.imgShown
 			}
@@ -168,10 +172,17 @@ export default {
 		background: none;
 		padding:none;
 	} */
+	.back-div{
+		background: #EAEAEA;
+		padding:13px;
+		border:2px solid #5828C6;
+		border-radius:25px;
+		margin:15px 10px 0 10px;
+	}
     .main-contents{
-		border:none;
-		border-top:solid 2px gray;
-		margin-top:5px;
+		/* border-top:solid 2px gray; */
+		border-radius:25px;
+		padding:20px;
 		background: white;
 	}
 	.main-contents > div {
@@ -184,14 +195,14 @@ export default {
 	}
 	.imageIcon{
 		float:right;
-		margin-top:2px;
+		margin-top:5px;
 		margin-right:3px;
 	}
 	.imageIcon:hover{
 		opacity: 0.6;
 	}
 	.desHidden{
-		height: 21px;
+		height: 19px;
 		width: 70%;
 		overflow: hidden;
 	}
@@ -218,6 +229,7 @@ export default {
 		color:gray;
 	}
 	.poster{
+		margin-top:-2px;
 		float:right;
 		color:gray;
 	}
@@ -225,14 +237,19 @@ export default {
 		background:0;
 		border:0;
 		color:gray;
-		margin-top:-37px;
+		margin-top:-34px;
 		float: right;
 	}
 		/* .contents_vote *{
 			:0 0 0 1%;
 		} */
+	.heartIcon{
+		color:#5828C6;
+	}
 	.heartPoint{
-		background: linear-gradient(to top, #ff3557 0%, #ff7e7e 100%);
+		/* 빨강 하트 */
+		/* background: linear-gradient(to top, #ff3557 0%, #ff7e7e 100%); */
+		background: linear-gradient(to top, #ff8c20 0%, rgb(245, 204, 71) 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}

@@ -3,7 +3,7 @@
     <span class="profile">
         <i class="fas fa-user-circle"></i>
     </span>
-    <input type="text" placeholder="댓글을 입력하세요." v-model="newDes">
+    <input class="nanumsquare" type="text" placeholder="댓글을 입력하세요." v-model="newDes">
         <span class="commentBtn btnPoint" v-on:click="submitComment">
             <i class="far fa-paper-plane"></i>
         </span>
@@ -72,6 +72,7 @@ export default {
 .commentInput > input{
 		background:none;
 		border:none;
+        font-size:14px;
 		height:40px;
 		width:77%;
 	}

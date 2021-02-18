@@ -4,7 +4,7 @@
         <span class="deleteBtn cursorPoint">
 			<i class="fas fa-minus-circle"></i>
 		</span>
-        <input class="itemForm" type="text" placeholder="항목" />
+        <input class="itemForm input-font nanumsquare" type="text" placeholder="항목" />
     </div><br></div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
         font-size: 20px;
         float:left;
         margin-left:11px;
+        margin-top:7px;
     }
     .itemForm {
         width: 80%;

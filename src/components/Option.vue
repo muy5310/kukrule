@@ -19,7 +19,7 @@
 		</div>	
 		<div class="optLine">
 		<label class="optText">투표 종료 시간</label>
-		<input type="datetime-local" class="optCheck"  name="endtime"><br>
+		<input type="datetime-local" class="voteDate optCheck nanumsquare"  name="endtime"><br>
 		</div>	
 	</div>
 </template>
@@ -38,15 +38,22 @@ export default {
 	.option {
 		font-weight: bold;
 	}
+	.optText{
+		margin-right: 10px;
+	}
 	.optCheck{
 		cursor:pointer;
 		float:right;
 	}
 	.optLine{
 		cursor: pointer;
+		margin-top:3px;
 	}
 	.optLine:hover{
 		background: rgb(233, 233, 233);
 		opacity: 0.7;
+	}
+	.voteDate{
+		width: 120px;
 	}
 </style>

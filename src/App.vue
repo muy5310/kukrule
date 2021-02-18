@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app nanumsquare">
     <router-view></router-view>
   </div>
 </template>
@@ -20,6 +20,14 @@ export default {
   background: white;
   height:100%;
   min-height: 100vh;
+}
+/* 글꼴 설정 */
+.nanumsquare {
+  font-family: 'NanumSquare', sans-serif !important;
+}
+.input-font ::placeholder {
+  font-family: 'NanumSquare', sans-serif !important;
+  color:red;
 }
 /* 박스 그림자 */
 .shadow {
@@ -87,6 +95,7 @@ export default {
   color:rgb(205, 41, 16);
   font-size: 20px;
   cursor:pointer;
+  margin-top:5px;
 }
 .addText {
   width: 81%;
@@ -95,6 +104,7 @@ export default {
   background: none;
   border: none;
   font-size: 15px;
+  font-weight: bold;
   margin-left:5px;
   cursor: pointer;
 }
@@ -109,7 +119,7 @@ export default {
   margin-bottom: 40px;
 	padding:0;
 	text-align:center;
-	font-size:12px;
+	font-size:15px;
 	color: #999;
 }
 .divLine:after{

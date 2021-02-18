@@ -1,7 +1,7 @@
 <template>
     <div class="modal-card shadow">
-    <button class="popBtn cursorPoint">인기 댓글순</button>
-    <button class="popBtn cursorPoint">최근 날짜순</button>
+    <button class="popBtn cursorPoint nanumsquare">인기 댓글순</button>
+    <button class="popBtn cursorPoint nanumsquare">최근 날짜순</button>
     </div>
 </template>
 
