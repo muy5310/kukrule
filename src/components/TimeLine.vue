@@ -35,5 +35,6 @@ export default {
 <style>
 .timeLine{
   background: white;
+  padding-top: 13px;
 }
 </style>

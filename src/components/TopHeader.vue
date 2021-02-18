@@ -38,14 +38,16 @@ export default {
 
 <style scoped>
 	.completeBtn {
+		margin-top:-3px;
         float: right;
-		border-radius: 5px;;
+		border-radius: 5px;
+		font-size:13px;
 		/* background: linear-gradient(to right, #656b8f, #8a79c4); */
 		/* background-image: linear-gradient(120deg, #cd9cf2 0%, #e6dffc 100%);
 		*/
 		background-image: linear-gradient(120deg, #fd5967 0%, rgb(255, 140, 140) 100%);
 		font-weight: bold;
 		color:white;
-		padding:2px 3px;
+		padding:5px;
     }
 </style>

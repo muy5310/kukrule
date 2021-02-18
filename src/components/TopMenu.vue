@@ -3,15 +3,16 @@
         <img class="kukruleLogo cursorPoint" src='../image/kukrulelogo.png' v-on:click="scrollTop"/>
 		<span class="search-box">
 			<input class="searchInput" type="text" placeholder="검색">
-			<span class="btnPoint">
+			<span class="btnPoint searchIcon">
                 <i class="fas fa-search"></i>
             </span>
 		</span>
-		<span class="rightSet btnPoint postBtn" @click="isModalViewed = true">
-            <i class="fas fa-ellipsis-h"></i> 
+		<span class="rightSet btnPoint menuBtn" @click="isModalViewed = true">
+            <i class="fas fa-bars"></i> 
         </span>
-		<span class="rightSet btnPoint " v-on:click="movePost">
-            <i class="fas fa-plus"></i>
+		<span class="rightSet cursorPoint" v-on:click="movePost">
+            <!-- <i class="fas fa-plus"></i> -->
+            <img class="postIcon" src='../image/posticon.png'/>
         </span>
         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
             <HomeModal></HomeModal>
@@ -62,28 +63,36 @@ export default {
     }
     .kukruleLogo {
 		float:left;
-        width:73px;
+        width:38px;
+        margin-left:10px;
     }
 		
     .search-box {
         background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
-        border-radius: 7px;
+        border-radius: 3px;
         padding: 1%;
     }
         
 	.searchInput{
         background: none;
         border: none;
-		width:40%;
+		width:47%;
         margin-top:10px;
         height: 20px;
     }
-    
+    .searchIcon{
+        color:#5828C6;
+    }
+    .postIcon{
+        width:27px;
+    }
 	.rightSet{
 		float:right;
-		margin:7px 1% 0 1%;
+		margin:6px 1% 0 1%;
 	}
-    .postBtn{
+    .menuBtn{
+        font-size:18px;
+        margin-top:10px;
         margin-right:18px;
     }
 </style>

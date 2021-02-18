@@ -2,8 +2,8 @@
 <div class="app">
     <TopHeader v-bind:propsdata="title" v-bind:icondata="icon" v-on:mainPage="mainMove" v-on:backPage="backMove"></TopHeader>
     <div class="postBox">
-        <input v-model="newTitle" class="titleForm" type="text" placeholder="제목" />
-		<textarea v-model="newCaption" class="mainForm" type="text" placeholder="본문" ></textarea>
+        <input v-model="newTitle" class="titleForm nanumsquare" type="text" placeholder="제목" />
+		<textarea v-model="newCaption" class="mainForm nanumsquare" type="text" placeholder="본문" ></textarea>
         <p class="imgAdd"><input type="file" id="file" class="inputFile" v-on:change="upload">
             <label for="file" class="btnPoint">
                 <i class="far fa-images imgIcon"></i> 
@@ -21,13 +21,13 @@
         <span class="deleteBtn cursorPoint" v-on:click="removeAnswer(index)">
 			<i class="fas fa-minus-circle"></i>
 		</span>
-        <input v-model="newItems[index]" class="itemForm" type="text" placeholder="항목" />
+        <input v-model="newItems[index]" class="itemForm nanumsquare" type="text" placeholder="항목" />
     </div>
     <div class="itemAdd">
         <span class="addBtn">
 			<i class="fas fa-plus-circle cursorPoint"></i>
 		</span>
-        <button class="addText" v-on:click="addAnswer">새 답변 추가</button>
+        <button class="addText nanumsquare" v-on:click="addAnswer">새 답변 추가</button>
     </div><br>
     <Option></Option>
 </div>
@@ -51,8 +51,8 @@ export default {
             newItems:["",""],
             imgExist:false,
             postlike:0,
-            viewmore:false,
             moreShown:false,
+            moreClick :true,
             imgShown:false
         }
     },
@@ -105,8 +105,8 @@ export default {
             this.$router.push({path:'/'});
         },
         mainMove: function(){
-            if (this.newCaption.length > 15 || this.newImgSrc != 'none') {
-                this.viewmore = true;
+            if (this.newCaption.length > 50 || this.newImgSrc != 'none') {
+                this.moreClick = false;
                 this.moreShown = true;
             }
             if(this.newTitle=='' || this.newCaption==''){
@@ -128,8 +128,7 @@ export default {
                 author:'국룰코인',
                 liked : false,
                 postlike : this.postlike,
-                moreClick : false,
-                viewmore: this.viewmore,
+                moreClick : this.moreClick,
                 moreShown : this.moreShown,
                 imgShown : this.imgShown
             }
@@ -186,6 +185,7 @@ export default {
     font-size: 20px;
     float:left;
     margin-left:11px;
+    margin-top:7px;
 }
 .itemForm {
     width: 80%;

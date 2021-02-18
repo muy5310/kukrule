@@ -1,7 +1,7 @@
 <template>
     <div class="post-box">
-        <input class="titleForm" type="text" placeholder="제목" />
-		<textarea class="mainForm" type="text" placeholder="본문" ></textarea>
+        <input class="titleForm nanumsquare" type="text" placeholder="제목" />
+		<textarea class="mainForm nanumsquare" type="text" placeholder="본문" ></textarea>
     </div>
 </template>
 

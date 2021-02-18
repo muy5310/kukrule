@@ -1,6 +1,7 @@
 <template>
 <div class="app">
     <TopHeader v-bind:propsdata="title" v-on:backPage="backMove"></TopHeader>
+    <div class="page-box">
     <div class="midLine">
 		<span>댓글</span>
 		<span class="commentNum">{{commentNum}}</span>
@@ -13,6 +14,7 @@
         <CommentInput v-on:commentAdd="addNum"></CommentInput>
 	</div>
     <CommentLine></CommentLine>
+    </div>
 </div>
 </template>
 
@@ -23,10 +25,12 @@ import CommentLine from '../components/CommentLine.vue';
 import ModalView from '../components/ModalView.vue';
 import CommentModal from '../components/modals/CommentModal.vue';
 import commentData from '../assets/commentData.js';
+import titleData from '../assets/titleData.js';
 
 export default {
     data:function(){
         return{
+            titleData : titleData,
             title:'(설문제목)',
             isModalViewed: false,
             commentData:commentData,
@@ -42,6 +46,7 @@ export default {
     },
     methods:{
         backLink: function(){
+            titleData.length = 0;
             this.$router.go(-1);
         },
         backMove: function(){
@@ -56,12 +61,16 @@ export default {
     },
     beforeMount(){
         this.commentNum = this.commentData.length;
+        this.title = this.titleData[0];
         this.scrollTop();
     }
 }
 </script>
 
 <style scoped>
+    .page-box{
+        padding:7px;
+    }
     .midLine{
         margin: 0 1%;
     }
