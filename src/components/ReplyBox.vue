@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
     .Rebox{
-    color:rgb(100, 97, 97);
+    color:rgb(70, 69, 69);
     }
     .profile {
         margin:3px;
