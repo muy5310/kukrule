@@ -1,0 +1,1 @@
+export default ['(설문제목)'];
