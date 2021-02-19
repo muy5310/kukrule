@@ -1,12 +1,11 @@
 <template>
-<div class="back-div">
+<div class="back-div" :class="{adver : postData.adver, public : postData.public}">
     <div class="main-contents">
 		<div>
             <span class="title">{{postData.title}}</span>
-
-			<button class="setBtn" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
+			<button class="setBtn borderNone" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
 				<ModalView v-if="isModalViewed" @close-modal="isModalViewed = false" >
-					<PostModal v-on:deleteSubmit="deleteRe"></PostModal>
+					<PostModal v-on:deleteSubmit="deleteRe" v-on:editSubmit="editClick"></PostModal>
 				</ModalView>
 			<span class="imageIcon" v-if="postData.imgShown">
 				<i class="far fa-file-image"></i>
@@ -22,7 +21,7 @@
 				<br>
 				<img class="imgSize" v-if="postData.imgShown" v-bind:src="postData.img">
 				</p>
-				<button class="moreBtn cursorPoint nanumsquare" v-show="postData.moreShown" v-on:click="[postData.moreClick=true, viewControl()]">...더 보기</button>
+				<button class="moreBtn borderNone cursorPoint nanumsquare" v-show="postData.moreShown" v-on:click="[postData.moreClick=true, viewControl()]">...더 보기</button>
 				<!-- 닫기 버튼 <button class="moreBtn cursorPoint" v-if="postData.viewmore" v-on:click="postData.moreClick">닫기</button> -->
 			</div>
 			<SurveyItem v-for="(item, i) in postData.items" v-bind:itemList="item" v-bind:key="i"></SurveyItem>
@@ -30,7 +29,7 @@
 				<span class="voteNum">2.8천</span>
 				<span>명 투표</span>
 				<span class="voteDetail">
-					<span> 
+					<span>
 						<i class="far fa-heart btnPoint heartIcon" v-if="!postData.liked" v-on:click="onClickBtn"></i>
 						<i class="fas fa-heart cursorPoint heartPoint" v-else v-on:click="cancelClick"></i>
                         <label class="likeNum">{{postData.postlike}}</label>
@@ -135,6 +134,9 @@ export default {
 		dataCheck: function(){
 			this.isModalViewed = false;		
 		},
+		editClick: function(){
+			this.$router.push({path:'/edit'});
+		},
 		shareClick : function() {
 			var newShare = {
 				title:this.postData.title,
@@ -179,6 +181,12 @@ export default {
 		border-radius:25px;
 		margin:15px 10px 0 10px;
 	}
+	.adver{
+		border:2px solid #ff8c20;
+	}
+	.public{
+		border:2px solid #C869E9;
+	}
     .main-contents{
 		/* border-top:solid 2px gray; */
 		border-radius:25px;
@@ -189,13 +197,13 @@ export default {
 		margin:2%
 	}
 	.title{
-		font-size:23px;
+		font-size:18px;
 		font-weight: bold;
 		margin-bottom:5px;
 	}
 	.imageIcon{
 		float:right;
-		margin-top:5px;
+		margin-top:3px;
 		margin-right:3px;
 	}
 	.imageIcon:hover{
@@ -208,15 +216,16 @@ export default {
 	}
 	.setBtn{
 		float:right;
-		margin-top:5px;
+		margin-top:2.5px;
 		background:none;
 		border:none;
 		cursor: pointer;
 		border-radius:5px;
 	}
 	.setBtn:hover{
-		background: linear-gradient(to right, #fbcac9, #8ca6ce);
-		color:white;
+		/* background: linear-gradient(to right, #fbcac9, #8ca6ce);
+		color:white; */
+		opacity: 0.7;
 		/* background: linear-gradient(to right, #F86461, #669EF4);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent; */
@@ -225,10 +234,12 @@ export default {
 		margin-top:4px;
 	} 
 	.peroid{
+		font-size:14px;
 		float:left;
 		color:gray;
 	}
 	.poster{
+		font-size:14px;
 		margin-top:-2px;
 		float:right;
 		color:gray;

@@ -4,8 +4,9 @@
     <div class="postBox">
         <input v-model="newTitle" class="titleForm nanumsquare" type="text" placeholder="제목" />
 		<textarea v-model="newCaption" class="mainForm nanumsquare" type="text" placeholder="본문" ></textarea>
-        <p class="imgAdd"><input type="file" id="file" class="inputFile" v-on:change="upload">
-            <label for="file" class="btnPoint">
+        <p class="imgAdd cursorPoint shadow" v-on:change="upload" >
+            <input type="file" id="file" class="inputFile">
+            <label for="file">
                 <i class="far fa-images imgIcon"></i> 
                 <span v-if="!imgExist">이미지 추가하기 </span>
                 <span v-else>이미지 변경하기 </span>
@@ -24,10 +25,10 @@
         <input v-model="newItems[index]" class="itemForm nanumsquare" type="text" placeholder="항목" />
     </div>
     <div class="itemAdd">
-        <span class="addBtn">
+        <span class="addBtn" v-on:click="addAnswer">
 			<i class="fas fa-plus-circle cursorPoint"></i>
 		</span>
-        <button class="addText nanumsquare" v-on:click="addAnswer">새 답변 추가</button>
+        <button class="addText borderNone nanumsquare" v-on:click="addAnswer">새 답변 추가</button>
     </div><br>
     <Option></Option>
 </div>
@@ -148,7 +149,7 @@ export default {
 
 <style scoped>
 .postBox{
-    padding:5px;
+    padding:5px 20px;
 }
 .titleForm {
     margin-top: 5px;
@@ -163,13 +164,21 @@ export default {
 .itemLine{
     margin-bottom: 10px;
     text-align: center;
+    padding:0 10px;
 }
 .imgIcon{
     margin-right:5px;
 }
 .imgAdd{
+    background: #C869E9;
+    color:white;
+    height: 30px;
     margin-top:0;
     text-align: center;
+    padding-top: 5px;
+}
+.imgAdd>label{
+    cursor: pointer;
 }
 .inputFile{
     width:0px; 

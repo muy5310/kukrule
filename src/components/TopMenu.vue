@@ -2,7 +2,7 @@
     <div class="top-box">
         <img class="kukruleLogo cursorPoint" src='../image/kukrulelogo.png' v-on:click="scrollTop"/>
 		<span class="search-box">
-			<input class="searchInput" type="text" placeholder="검색">
+			<input class="searchInput borderNone" type="text" placeholder="검색">
 			<span class="btnPoint searchIcon">
                 <i class="fas fa-search"></i>
             </span>
@@ -10,9 +10,9 @@
 		<span class="rightSet btnPoint menuBtn" @click="isModalViewed = true">
             <i class="fas fa-bars"></i> 
         </span>
-		<span class="rightSet cursorPoint" v-on:click="movePost">
-            <!-- <i class="fas fa-plus"></i> -->
-            <img class="postIcon" src='../image/posticon.png'/>
+		<span class="plusIcon rightSet cursorPoint" v-on:click="movePost">
+            <i class="fas fa-plus"></i>
+            <!-- <img class="postIcon" src='../image/posticon.png'/> -->
         </span>
         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
             <HomeModal></HomeModal>
@@ -83,16 +83,24 @@ export default {
     .searchIcon{
         color:#5828C6;
     }
+    .plusIcon{
+        background: linear-gradient(to top, rgb(152, 99, 251), #5828C6);
+        color:white;
+        border-radius: 3px;
+        padding-top:2px;
+        width:22px;
+        height: 19px;
+    }
     .postIcon{
         width:27px;
     }
 	.rightSet{
 		float:right;
-		margin:6px 1% 0 1%;
+		margin:10px 1% 0 1%;
 	}
     .menuBtn{
         font-size:18px;
-        margin-top:10px;
+        margin-top:12px;
         margin-right:18px;
     }
 </style>

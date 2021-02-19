@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
     .post-box{
-        padding:5px;
+        padding:5px 20px;
     }
     .titleForm {
         margin-top: 5px;

@@ -34,6 +34,7 @@ export default {
     .option-box{
 		margin: 0 2%;
 		color: rgb(39, 39, 46);
+		padding:0 10px;
 	}
 	.option {
 		font-weight: bold;

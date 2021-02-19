@@ -1,12 +1,12 @@
 <template>
 <div class="commentInput">
-    <span class="profile">
+    <!-- <span class="profile">
         <i class="fas fa-user-circle"></i>
-    </span>
-    <input class="nanumsquare" type="text" placeholder="댓글을 입력하세요." v-model="newDes">
-        <span class="commentBtn btnPoint" v-on:click="submitComment">
-            <i class="far fa-paper-plane"></i>
-        </span>
+    </span> -->
+    <input class="nanumsquare borderNone" type="text" placeholder="댓글을 입력하세요." v-model="newDes">
+        <button class="commentBtn cursorPoint nanumsquare borderNone" v-on:click="submitComment">
+            등록
+        </button>
 </div>
 </template>
 
@@ -70,6 +70,7 @@ export default {
 		padding:2px;
 	}
 .commentInput > input{
+        margin-left:10px;
 		background:none;
 		border:none;
         font-size:14px;
@@ -77,8 +78,15 @@ export default {
 		width:77%;
 	}
     .commentBtn{
+        background: #5828C6;
+        color: #ffde20;
+        font-size: 15px;
+        font-weight: bold;
+        border:none;
         float:right;
-        margin-top:8px;
+        height: 28px;
+        width: 40px;
+        margin-top:6px;
         margin-right:7px;
     }
     .profile{
