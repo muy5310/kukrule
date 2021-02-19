@@ -60,7 +60,6 @@ import SurveyItem from './SurveyItem.vue';
 import shareData from '../assets/shareData.js';
 import titleData from '../assets/titleData.js';
 import commentData from '../assets/commentData.js';
-
 export default {
 	name:'post',
 	props:{
@@ -182,10 +181,10 @@ export default {
 		margin:15px 10px 0 10px;
 	}
 	.adver{
-		border:2px solid #ff8c20;
+		background:  #ff8c20;
 	}
 	.public{
-		border:2px solid #C869E9;
+		background:  #C869E9;
 	}
     .main-contents{
 		/* border-top:solid 2px gray; */
