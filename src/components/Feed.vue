@@ -181,7 +181,7 @@ export default {
 		margin:15px 10px 0 10px;
 	}
 	.adver{
-		background:  #ff8c20;
+		background:  #ffcb20;
 	}
 	.public{
 		background:  #C869E9;
