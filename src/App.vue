@@ -21,6 +21,10 @@ export default {
   height:100%;
   min-height: 100vh;
 }
+.borderNone:focus{ 	
+    border: none;
+    outline:none;
+    }
 /* 글꼴 설정 */
 .nanumsquare {
   font-family: 'NanumSquare', sans-serif !important;
@@ -48,7 +52,8 @@ export default {
   cursor: pointer;
 }
 .btnPoint:hover{
-  background: linear-gradient(to right, #F86461, #669EF4);
+  /* background: linear-gradient(to right, #F86461, #669EF4); */
+  background: linear-gradient(to right, #ff8c20, #5828C6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -74,12 +79,19 @@ export default {
 	text-align: center;
   color:white;
 	padding:13px;
-	background: linear-gradient(to right, #fbcac9, #8ca6ce);
+	/* background: linear-gradient(to right, #fbcac9, #8ca6ce); */
+  background: linear-gradient(to right, rgb(152, 99, 251), #5828C6);
   margin-bottom: 10px;
 }
 .topBack{
 	float:left;
+  cursor: pointer;
 }
+.topBack:hover{
+	background: linear-gradient(120deg,rgb(255, 202, 128) 0%, #ff7920 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
 .topTitle{
   text-align: center;
   font-weight: bold;
@@ -87,6 +99,7 @@ export default {
 /* 항목 추가 버튼 */
 .itemAdd{
   text-align: center;
+  padding:0 11px;
 }
 .addBtn {
   float:left;

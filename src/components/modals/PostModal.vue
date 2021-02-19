@@ -1,7 +1,7 @@
 <template>
     <div class="modal-card shadow">
-    <button class="popBtn cursorPoint nanumsquare" v-on:click="editMove">수정</button>
-    <button class="popBtn cursorPoint nanumsquare" v-on:click="Delete">삭제</button>
+    <button class="popBtn cursorPoint nanumsquare borderNone" v-on:click="Edit">수정</button>
+    <button class="popBtn cursorPoint nanumsquare borderNone" v-on:click="Delete">삭제</button>
     </div>
 </template>
 
@@ -9,11 +9,8 @@
 
 export default {
     methods:{
-        editLink: function(){
-            this.$router.push({path:'/edit'})
-        },
-        editMove:function(){
-            setTimeout(this.editLink, 500);
+        Edit: function(){
+            this.$emit('editSubmit');
         },
         Delete:function() {
             this.$emit('deleteSubmit');

@@ -17,6 +17,7 @@ export default {
 .itemLine{
     margin-bottom: 10px;
     text-align: center;
+    padding:0 10px;
 }
     .deleteBtn {
         font-size: 20px;

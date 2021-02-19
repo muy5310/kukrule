@@ -3,7 +3,7 @@
 		<div>
             <span class="title">{{shareData.title}}</span>
 
-			<button class="setBtn" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
+			<button class="setBtn borderNone" @click="isModalViewed = true"><i class="fas fa-ellipsis-v"></i></button>
 				<ModalView v-if="isModalViewed" @close-modal="isModalViewed = false" >
 					<PostModal v-on:deleteSubmit="deleteRe"></PostModal>
 				</ModalView>
@@ -110,13 +110,13 @@ export default {
 		margin:2%
 	}
 	.title{
-		font-size:23px;
+		font-size:19px;
 		font-weight: bold;
 		margin-bottom:5px;
 	}
 	.imageIcon{
 		float:right;
-		margin-top:5px;
+		margin-top:3px;
 		margin-right:3px;
 	}
 	.imageIcon:hover{
@@ -129,15 +129,14 @@ export default {
 	}
 	.setBtn{
 		float:right;
-		margin-top:5px;
+		margin-top:2.5px;
 		background:none;
 		border:none;
 		cursor: pointer;
 		border-radius:5px;
 	}
 	.setBtn:hover{
-		background: linear-gradient(to right, #fbcac9, #8ca6ce);
-		color:white;
+		opacity:0.7;
 		/* background: linear-gradient(to right, #F86461, #669EF4);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent; */
@@ -146,10 +145,12 @@ export default {
 		margin-top:4px;
 	} 
 	.period{
+		font-size:14px;
 		float:left;
 		color:gray;
 	}
 	.poster{
+		font-size:14px;
 		margin-top:-2px;
 		float:right;
 		color:gray;
@@ -167,7 +168,7 @@ export default {
 		background:0;
 	}
 	.heartPoint{
-		background: linear-gradient(to top, #ff3557 0%, #ff7e7e 100%);
+		background: linear-gradient(to top, #ff8c20 0%, rgb(245, 204, 71) 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}

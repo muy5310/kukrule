@@ -1,6 +1,6 @@
 <template>
     <div class="topHeader shadow">
-        <span class="topBack btnPoint" v-on:click="moveBack">
+        <span class="topBack" v-on:click="moveBack">
 			<i class="fas fa-arrow-left"></i>
 		</span>
 		<label class="topTitle">{{propsdata}}</label>
@@ -45,7 +45,8 @@ export default {
 		/* background: linear-gradient(to right, #656b8f, #8a79c4); */
 		/* background-image: linear-gradient(120deg, #cd9cf2 0%, #e6dffc 100%);
 		*/
-		background-image: linear-gradient(120deg, #fd5967 0%, rgb(255, 140, 140) 100%);
+		/* background-image: linear-gradient(120deg, #fd5967 0%, rgb(255, 140, 140) 100%); */
+		background: linear-gradient(120deg,rgb(245, 170, 71) 0%, #ff7920 100%);
 		font-weight: bold;
 		color:white;
 		padding:5px;

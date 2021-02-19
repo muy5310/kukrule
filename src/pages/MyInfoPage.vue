@@ -1,11 +1,11 @@
 <template>
     <div class="app">
         <div class="topHeader shadow">
-        <span class="topBack btnPoint" v-on:click="backMove">
+        <span class="topBack" v-on:click="backMove">
 			<i class="fas fa-times"></i>
 		</span>
 		<label class="topTitle">내 정보</label>
-        <span class="complete btnPoint" v-on:click="backMove">
+        <span class="complete" v-on:click="backMove">
 			<i class="fas fa-check"></i>
 		</span></div>
         <div class="infoBox">
@@ -33,8 +33,8 @@
         
         <AutoLogin></AutoLogin><br>
         <div class="mybtnBox">
-            <button class="mybtn mySurvey shadow cursorPoint" type="button">나의 설문</button>
-            <button class="mybtn myChoice shadow cursorPoint" type="button">나의 선택</button>
+            <button class="mybtn mySurvey shadow cursorPoint borderNone" type="button">나의 설문</button>
+            <button class="mybtn myChoice shadow cursorPoint borderNone" type="button">나의 선택</button>
         </div>
         <TimeLine v-on:receiveEvent="commentMove"></TimeLine>
     </div>
@@ -77,8 +77,15 @@ export default {
 		font-weight: bold;
 		color:white;
         float: right;
+        cursor: pointer;
+    }
+    .complete:hover{
+        background: linear-gradient(120deg,rgb(255, 202, 128) 0%, #ff7920 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     .infoBox{
+        padding-top:20px;
         text-align: center;
         justify-content: center;
         display:flex;
@@ -121,6 +128,7 @@ export default {
     }
     .mybtnBox{
         margin:20px 0;
+        margin-bottom: 0px;
     }
     .mybtn{
         width: 48%;
@@ -132,9 +140,14 @@ export default {
         border-radius:2px;
     }
     .mySurvey{
-        background: linear-gradient(120deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+        font-family: 'NanumSquare', sans-serif !important;
+        /* background: linear-gradient(120deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); */
+        /* background: linear-gradient(120deg, #ffda36 0%, #ffef5a 99%, #ffde85 100%);*/
+        background: linear-gradient(120deg, #f7bb3a 0%, #fcd27a 99%, #fdd68e 100%); 
     }
     .myChoice{
-        background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+        font-family: 'NanumSquare', sans-serif !important;
+        /* background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
+        background: linear-gradient(120deg, #d8a1fd 0%, #eec2fb 100%);
     }
 </style>

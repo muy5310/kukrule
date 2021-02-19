@@ -5,7 +5,7 @@
         <div>
             <input class="userInput nanumsquare" type="text" placeholder="이메일주소 입력" id="userid"><br>
             <input class="userInput nanumsquare" type="password" placeholder="비밀번호 입력" id="userpw"><br>
-            <button class="loginBtn cursorPoint nanumsquare" type="submit" v-on:click="mainMove">로그인</button>
+            <button class="loginBtn borderNone cursorPoint nanumsquare" type="submit" v-on:click="mainMove">로그인</button>
         </div>
         <div>
             <AutoLogin></AutoLogin>
@@ -19,10 +19,10 @@
 			SNS 로그인
 		</p>
         <div class="sns-box"> 
-            <button type="button" class="snsBtn naverBtn cursorPoint"><img src="../image/naverlogo.png"/> </button>
-            <button type="button" class="snsBtn facebookBtn cursorPoint"><i class="fab fa-facebook-f"></i></button> 
-            <button type="button" class="snsBtn kakaoBtn cursorPoint"><i class="fas fa-comment"></i></button> 
-            <button type="button" class="snsBtn googleBtn cursorPoint"><img src="../image/googlelogo.png"/></button> 
+            <button type="button" class="snsBtn borderNone naverBtn cursorPoint"><img src="../image/naverlogo.png"/> </button>
+            <button type="button" class="snsBtn borderNone facebookBtn cursorPoint"><i class="fab fa-facebook-f"></i></button> 
+            <button type="button" class="snsBtn borderNone kakaoBtn cursorPoint"><i class="fas fa-comment"></i></button> 
+            <button type="button" class="snsBtn borderNone googleBtn cursorPoint"><img src="../image/googlelogo.png"/></button> 
         </div>
         <div>
             <a class="bottomBtn" href="./#/signup">회원가입</a>

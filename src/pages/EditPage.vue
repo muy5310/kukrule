@@ -7,7 +7,7 @@
         <span class="addBtn cursorPoint">
 			<i class="fas fa-plus-circle"></i>
 		</span>
-        <button class="addText">새 답변 추가</button>
+        <button class="addText borderNone">새 답변 추가</button>
     </div><br>
     <Option></Option>
 </div>

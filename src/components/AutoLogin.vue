@@ -18,7 +18,7 @@ export default {
         margin: 0 0 0 4%;
     }
     .autoCheck {
-        margin-top:5px;
+        margin-top:3px;
         float: left;
     }
 </style>
